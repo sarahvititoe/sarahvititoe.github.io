@@ -5,10 +5,12 @@ navbar:
   right:
     - text: "About"
       href: about.html
+    - icon: fa-linkedin-square fa-lg
+      hred: https://www.linkedin.com/in/sarahvititoe/
     - icon: fa-envelope fa-lg
       href: mailto:<sev2125@columbia.edu>
     - icon: fa-github fa-lg
       href: http://github.com/sarahvititoe/
 output:
   html_document: 
-    theme: litera
+    theme: lux
