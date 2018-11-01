@@ -7,8 +7,10 @@ navbar:
       href: about.html
     - icon: fa-envelope fa-lg
       href: mailto:<sev2125@columbia.edu>
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/sarahvititoe/
     - icon: fa-github fa-lg
       href: http://github.com/sarahvititoe/
 output:
   html_document: 
-  theme: litera
+  theme: flatly
