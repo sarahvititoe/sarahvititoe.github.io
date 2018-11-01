@@ -1,15 +1,4 @@
 ---
-title: "Holy cow!"
+title: "Index"
 ---
-
-### I have a webpage!
-
-And I can put all kinds of stuff on it!
-
-### Add some links 
-
-I like [google](https://www.google.com). 
-
-I can link directly to my [about page](about.html). 
-
-We can also add imaes (see p8105) 
+Hi Steph!! :)
