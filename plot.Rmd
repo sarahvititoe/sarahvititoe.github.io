@@ -1,25 +1,24 @@
 ---
-title: "Plots"
-author: "Sarah Vititoe"
-date: "11/1/2018"
-output: html_document
+title: "My Plot_ly plots"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
-
-Finding inspiration for healthy, vegetarian food can be challenging. Luckily, we can use some plotly plots for inspiration!
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
-```{r}
+library(flexdashboard)
 library(tidyverse)
 library(viridis)
 library(p8105.datasets)
 library(plotly)
-```
-
-```{r}
 data("instacart")
 ```
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
 
 ```{r}
 veggies <-
@@ -41,6 +40,11 @@ inner_join(instacart, veggies) %>%
          yaxis = list(title = "Items sold"))
 ```
 
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
 ```{r}
 instacart %>% 
   group_by(order_hour_of_day) %>% 
@@ -53,12 +57,21 @@ instacart %>%
          yaxis = list(title = "Items sold"))
 ```
 
+### Chart C
+
 ```{r}
 instacart %>% 
-  filter(department %in% c("produce", "meat seafood")) %>% 
+  filter(department %in% c("produce", "babies")) %>% 
   group_by(user_id, department) %>%
   count() %>% 
   spread(key = department, value = n) %>% 
-  plot_ly(x = ~produce, y = ~`meat seafood`, type = "scatter", mode = "marker")
+  filter(!is.na(babies) & !is.na(produce)) %>% 
+  ungroup() %>% 
+  sample_n(1000) %>% 
+  plot_ly(x = ~produce, y = ~babies, type = "scatter", mode = "markers") %>% 
+  layout(title = "Is there a relationship between baby products and produce items?",
+         xaxis = list(title = "Produce Items Bought"),
+         yaxis = list(title = "Baby Items Bought"))
 ```
+
 
