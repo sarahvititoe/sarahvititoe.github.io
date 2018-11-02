@@ -11,6 +11,7 @@ navbar:
       href: https://www.linkedin.com/in/sarahvititoe/
     - icon: fa-github fa-lg
       href: http://github.com/sarahvititoe/
+    - icon: fa-chart-line fa-lg
+      href: plot.html
 output:
   html_document: 
-  theme: flatly

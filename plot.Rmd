@@ -1,0 +1,64 @@
+---
+title: "Plots"
+author: "Sarah Vititoe"
+date: "11/1/2018"
+output: html_document
+---
+
+Finding inspiration for healthy, vegetarian food can be challenging. Luckily, we can use some plotly plots for inspiration!
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+library(plotly)
+```
+
+```{r}
+data("instacart")
+```
+
+```{r}
+veggies <-
+  instacart %>% 
+  filter(department == "produce") %>% 
+  count(product_name, sort = TRUE) %>% 
+  top_n(15) %>% 
+  select(product_name)
+
+
+inner_join(instacart, veggies) %>% 
+  group_by(product_name, order_dow) %>% 
+  count(sort = TRUE) %>% 
+  plot_ly(y = ~n, x = ~order_dow, color = ~product_name, type = "bar",
+          colors = "Set2") %>% 
+  layout(barmode = "stack", 
+         title = "15 most popular produce items",
+         xaxis = list(title = "Day of Week"),
+         yaxis = list(title = "Items sold"))
+```
+
+```{r}
+instacart %>% 
+  group_by(order_hour_of_day) %>% 
+  filter(product_name %in% c("Limes", "Large Lemon", "Organc Yellow Onion", "Organic White Onion", "Organic Hass Avocado", "Organic Avocado")) %>% 
+  count(product_name, sort = TRUE) %>% 
+  plot_ly(x = ~order_hour_of_day, y = ~n, color = ~product_name, type = "scatter", mode = "line") %>% 
+  layout(barmode = "stack", 
+         title = "At what times are Guac Ingredients Bought?",
+         xaxis = list(title = "Hour of Day"),
+         yaxis = list(title = "Items sold"))
+```
+
+```{r}
+instacart %>% 
+  filter(department %in% c("produce", "meat seafood")) %>% 
+  group_by(user_id, department) %>%
+  count() %>% 
+  spread(key = department, value = n) %>% 
+  plot_ly(x = ~produce, y = ~`meat seafood`, type = "scatter", mode = "marker")
+```
+
