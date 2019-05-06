@@ -3,4 +3,3 @@ title: "Sarah Vititoe"
 ---
 Welcome to my website!
 
-To see some plots, click [here](plot.html).

@@ -6,12 +6,10 @@ navbar:
     - text: "About"
       href: about.html
     - icon: fa-envelope fa-lg
-      href: mailto:<sev2125@columbia.edu>
+      href: mailto:<sarahvititoe23@gmail.com>
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/sarahvititoe/
     - icon: fa-github fa-lg
       href: http://github.com/sarahvititoe/
-    - icon: fa-chart-line fa-lg
-      href: plot.html
 output:
   html_document: 
