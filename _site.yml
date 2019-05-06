@@ -1,10 +1,8 @@
 name: "Yay internet!"
 output_dir: "."
 navbar:
-  title: "Home"
+  title: "Sarah Vititoe"
   right:
-    - text: "About"
-      href: about.html
     - icon: fa-envelope fa-lg
       href: mailto:<sarahvititoe23@gmail.com>
     - icon: fa-linkedin fa-lg
@@ -13,3 +11,5 @@ navbar:
       href: http://github.com/sarahvititoe/
 output:
   html_document: 
+    theme: null
+    css: bootstrap.min.css
