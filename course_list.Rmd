@@ -21,7 +21,6 @@ output:
 - Pharmacoepidemiology
 
 
-
 ### **Biostatistics**
 - Analysis of Categorical Data
 
