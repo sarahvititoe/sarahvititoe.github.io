@@ -21,7 +21,7 @@ gr_title <- read_html(url) %>%
 
 I'm currently based out of **New York, NY**, but I'm moving to the **Bay Area, California** in August 2019.
 
-I'm an **epidmiologist** and **data scientist** currently working as a data manager on the chronic disease side of Columbia University's [Center for Infection and Immunity](https://www.mailman.columbia.edu/research/center-infection-and-immunity/chronic-diseases-microbiome).
+I'm an **epidemiologist** and **data enthusiast** currently working as a data manager on the chronic disease side of Columbia University's [Center for Infection and Immunity](https://www.mailman.columbia.edu/research/center-infection-and-immunity/chronic-diseases-microbiome).
 
 I love working with data in the healthcare field, but I'm most passionate about projects involving **observational studies**, **cancer** and **chronic disease** research, and **patient-centered** inniatives. I work mostly in R, but I'm also proficient in SQL and SAS.
 
