@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>SARAH ELIZABETH VITITOE</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 54px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+
+.section h2 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h3 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h4 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h5 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h6 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4,h5",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Sarah Vititoe</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="cv.html">CV/Resume</a>
+</li>
+<li>
+  <a href="projects.html">Projects</a>
+</li>
+<li>
+  <a href="mailto:&lt;sarahvititoe23@gmail.com&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/sarahvititoe/">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/sarahvititoe/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">SARAH ELIZABETH VITITOE</h1>
+
+</div>
+
+
+<div id="contact-information" class="section level1">
+<h1>Contact Information</h1>
+<p><a href="mailto:sarahvititoe23@gmail.com">sarahvititoe23@gmail.com</a> | <a href="linkedin.com/in/sarahvititoe" class="uri">linkedin.com/in/sarahvititoe</a></p>
+</div>
+<div id="education" class="section level1">
+<h1>Education</h1>
+<div id="columbia-university-mailman-school-of-public-health-new-york-ny" class="section level3">
+<h3><strong><a href="https://www.mailman.columbia.edu/academics/departments/epidemiology">Columbia University Mailman School of Public Health</a>, New York, NY</strong></h3>
+<p>09/2017 – Expected 05/2019</p>
+<p><strong>Master of Public Health (MPH) in Epidemiology, Certificate in Applied Biostatistics</strong></p>
+<ul>
+<li><p><em>Thesis:</em> The Role of Gut Microbiota on CpG Island Methylation Phenotype CIMP Colorectal Cancer Tumorigenesis</p></li>
+<li><p><em>Graduate Teaching Assistant:</em> SQL and Relational Databases for Research and Data Science (one semester Fall 2018, two semesters Spring 2019)</p></li>
+<li><p><em>Leadership:</em> Healthcare Data Analytics Club at Mailman SPH, Co-President 2018</p></li>
+<li><p><em><a href="course_list.html">Relevant Coursework:</a></em> Cancer Epidemiology; Data Science; Pharmacoepidemiology; Categorical Data Analysis</p></li>
+</ul>
+</div>
+<div id="university-of-florida-college-of-liberal-arts-and-sciences-gainesville-fl" class="section level3">
+<h3><strong><a href="https://catalog.ufl.edu/UGRD/colleges-schools/UGLAS/MCY_BS/">University of Florida, College of Liberal Arts and Sciences</a>, Gainesville, FL</strong></h3>
+<p>08/2013 - 05/2017</p>
+<p><strong>Bachelor of Science in Microbiology and Cell Sciences, Minors in Public Health and Health Disparities in Society</strong></p>
+<ul>
+<li><p><em><a href="course_list.html">Relevant Coursework:</a></em> Python for Biologists; Molecular Biology; Genetics; Advanced Microbiology Lab</p></li>
+<li><p><em>Teaching Assistant:</em> Laboratory Methods for Microbiology; Introduction to Microbes (Online)</p></li>
+</ul>
+</div>
+</div>
+<div id="public-health-experience" class="section level1">
+<h1>Public Health Experience</h1>
+<div id="center-for-infection-and-immunity-research-assistant-new-york-ny" class="section level3">
+<h3><strong><a href="https://www.mailman.columbia.edu/research/center-infection-and-immunity/chronic-diseases-microbiome">Center for Infection and Immunity</a>, Research Assistant, New York, NY</strong></h3>
+<div id="autism-spectrum-disorder-the-microbiome" class="section level4">
+<h4>Autism Spectrum Disorder &amp; The Microbiome</h4>
+<p>05/2019 - Present</p>
+<p><strong>Supervisor: <a href="https://www.mailman.columbia.edu/research/center-infection-and-immunity/xiaoyu-jason-chen">Dr. Xiaoyu (Jason) Chen, PhD</a></strong></p>
+</div>
+<div id="colorectal-cancer-breast-cancer-the-microbiome" class="section level4">
+<h4>Colorectal Cancer, Breast Cancer &amp; The Microbiome</h4>
+<p>01/2018 - 05/2019</p>
+<p><strong>Principal Investigator: <a href="https://www.mailman.columbia.edu/research/center-infection-and-immunity/brent-williams-phd">Dr. Brent Williams, PhD</a></strong></p>
+<ul>
+<li><p>Supports PI by generating analyses of clinical, genetic, and metagenomics data from biobanks and patient samples to investigate the gut microbiome as a factor in biomarker-specific breast and colorectal cancers.</p></li>
+<li><p>Creates efficiencies by writing data cleanings scripts to perform tasks collaborators had previously done by hand.</p></li>
+<li><p>Leverages cross function knowledge in cell biology, epidemiology, and analytics methods to serve as a liaison between content expert, bioinformatician, study coordinator, and laboratory technician.</p></li>
+<li><p>Manages complex, data and generates reproducible reports and visualizations with R, R Markdown, and Github.</p></li>
+</ul>
+</div>
+</div>
+<div id="abbvie-inc.-rd-development-design-center-graduate-intern-lake-forrest-il" class="section level3">
+<h3><strong><a href="https://news.abbvie.com/news/abbvie-news-briefs/inside-our-design-lab-building-clinical-trial.htm">AbbVie Inc., R&amp;D, Development Design Center</a>, Graduate Intern, Lake Forrest, IL</strong></h3>
+<p>05/2018 – 08/2018</p>
+<ul>
+<li><p>Applied epidemiologic methods to systematically review and critique data sources for sources of invalidity or biases; developed a novel approach for answering research question when original data sources and methods quality standards.</p></li>
+<li><p>Curated real world data from recent cancer clinic trials by querying several private and public databases, critiqued data for potential biases, and implemented observational research methods to meet business need.</p></li>
+<li><p>Communicated findings to diverse audiences through interactive presentations, posters, and data visualizations.</p></li>
+<li><p>Systematically reviewed quantitative and qualitative literature regarding barriers to participating in clinical trials for cancer patients to inform internal consultant teams about current body of literature regarding patient-centric trial design.</p></li>
+</ul>
+</div>
+<div id="wellflorida-council-hiv-prevention-program-practicum-student-greater-gainesville-fl" class="section level3">
+<h3><strong><a href="https://wellflorida.org/areas-of-expertise/hiv-aids/">WellFlorida Council HIV Prevention Program</a>, Practicum Student, Greater Gainesville, FL</strong></h3>
+<p>09/2016 – 12/2016</p>
+<p>• Worked with community members and advocates to bring access to HIV testing to high-risk populations. • Used clear and simple language to educate community members about safe-sex practices at outreach events.</p>
+</div>
+<div id="uf-college-of-medicine-department-of-cell-biology-laboratory-technician-gainesville-fl" class="section level3">
+<h3><strong><a href="https://acb.med.ufl.edu/faculty-staff/dunn/">UF College of Medicine, Department of Cell Biology</a>, Laboratory Technician, Gainesville, FL</strong></h3>
+<p>08/2014 – 09/2015</p>
+<ul>
+<li><p>Collaborated with a PI to analyze the effect of anti-cancer drugs on tumor cell lines with light microscopy.</p></li>
+<li><p>Compiled data from in vitro drug studies, quantified cellular mechanisms, and created data visualizations.</p></li>
+</ul>
+</div>
+<div id="healthstreet-uf-department-of-epidemiology-volunteer-gainesville-fl" class="section level3">
+<h3><strong><a href="http://healthstreet.program.ufl.edu/">HealthStreet, UF Department of Epidemiology</a>, Volunteer, Gainesville, FL</strong></h3>
+<p>05/2015 – 07/2015</p>
+<ul>
+<li><p>Assisted health workers in linking underrepresented community members to local, relevant clinical trials, and helped refer patients to medical or social services to support their participation in clinical research.</p></li>
+<li><p>Aided community health workers in assessing the readability of patient education materials.</p></li>
+</ul>
+</div>
+</div>
+<div id="skills" class="section level1">
+<h1>Skills</h1>
+<div id="statistical-programming-languages" class="section level3">
+<h3>Statistical Programming Languages</h3>
+<ul>
+<li>SQL/MySQL</li>
+<li>R/R Studio/R Markdown</li>
+<li>Github</li>
+<li>SAS</li>
+<li>Python (basic)</li>
+<li>Microsoft Access &amp; Excel</li>
+</ul>
+</div>
+<div id="foreign-languages" class="section level3">
+<h3>Foreign Languages</h3>
+<ul>
+<li>Spanish (limited working proficiency), including 6-week immersion program in the Dominican Republic</li>
+</ul>
+</div>
+</div>
+<div id="community-involvement" class="section level1">
+<h1>Community Involvement</h1>
+<div id="childrens-miracle-network-hospital-dance-marathons" class="section level3">
+<h3>Children’s Miracle Network Hospital Dance Marathons</h3>
+<p>6 years of involvement in two large-scale philanthropies, <a href="http://www.dmstandnyc.org/">The Stand: New York City Dance Marathon</a> and <a href="https://floridadm.org/">Dance Marathon at UF</a>, supporting <a href="https://childrensmiraclenetworkhospitals.org/">Children’s Miracle Network Hospitals</a>. Roles included <strong>Data Strategist</strong> (The Stand, 2019), <strong>Director of Recruitment</strong> (The Stand 2018), and <strong>Assistant Director of Community Outreach</strong> (DM at UF, 2017)</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

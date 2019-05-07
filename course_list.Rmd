@@ -1,0 +1,145 @@
+---
+title: Coursework 
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    toc_depth: 5
+---
+
+# **Master of Public Health** 
+
+### **Epidemiology** 
+- Application of Epidemiologic Research in SAS
+
+- Cancer Epidemiology 
+
+- Epidemiology 2: Design and Conduct of Observational Studies with Lab
+
+- Epidemiology 3: Principles of Data Analysis in Epidemiology 
+
+- Pharmacoepidemiology
+
+
+
+### **Biostatistics**
+- Analysis of Categorical Data
+
+- Applied Regression 1 & 2
+
+- Data Science 1: R
+
+- Introduction to Randomized Clinical Trials
+
+- Latent Variables & Structural Equational Modeling
+
+- Relational Databases and SQL Programming for Research and Data Science
+
+### **Columbia MPH Core Courses**
+- Determinants of Health: Biological, Environmental, and Social
+
+- Foundations of Public Health: Ethics, History, and Human Rights
+
+- Health Economics, US Health Policy, Comparative Health Policy
+
+- Integration of Science and Practice 1 & 2
+
+- Leadership Development
+
+- Public Health Interventions
+
+- Research Methods and Applications: Qualitative and Quantitative Methods
+
+
+# **Bachelor of Science**
+
+### **Microbiology and Cell Sciences**
+
+##### Biology & Chemistry
+- Advanced Physiology with Lab
+
+- Advanced Microbiology Lab
+
+- Bacterial and Viral Pathogens
+
+- General Chemistry with Lab 1 & 2
+
+- Genetics
+
+- Genetics of Microorganisms
+
+- Human Parasitology
+
+- Intro to Biochemistry and Molecular Biology
+
+- Microbiology with Lab
+
+- Microbes without Borders
+
+- Organic Chemistry with Lab 1 & 2
+
+- Virology
+
+##### Physics, Mathematics & Statistics
+- Analytical Geometry and Calculus 2
+
+- Physics with Lab 1 & 2
+
+- Statistics 1 & 2
+
+### **Health Disparities & Public Health** 
+
+- Epidemiology in Public Health 1 (Graduate Level)
+
+- Fundamentals of Health Literacy
+
+- Global, Culutural, and Health Communication
+
+- Global Public Health 
+
+- Health and Medical Terminology
+
+- Introduction to Health Disparities
+
+- Introduction to Health Professions
+
+- Introduction to African American Studies
+
+- Practicum in Health Disparitis
+
+- Public Health Concepts
+
+- Public Health Aspects of Substance Abuse
+
+- Writing for Pre-Med
+
+### **Electives and Miscellaneous** 
+
+##### Art
+- Sketchbook Development
+
+##### Foreign Languages
+- Accelerated Intermediate Spanish
+
+- Spanish Service Learning
+
+##### Non-Profits
+- International Humanitarian Assistance
+
+- Organizational Leadership for Non-Profits
+
+##### Philosophy
+- Contemporary Moral Issues
+
+##### Programming
+- Python Programming for Biologists
+
+##### Psychology & Sociology
+- Black Power Movement
+
+- Developmental Psychology 
+
+- Social Psychology 
+
+- Sociology
+
