@@ -2,12 +2,16 @@ name: "Yay internet!"
 output_dir: "."
 navbar:
   title: "Sarah Vititoe"
+<<<<<<< HEAD
   href: index.html
   right:
     - text: "CV/Resume"
       href: cv.html
     - text: "Projects"
       href: projects.html
+=======
+  right:
+>>>>>>> 3ff51950f8a7de3d4a079aab3a1866071316d539
     - icon: fa-envelope fa-lg
       href: mailto:<sarahvititoe23@gmail.com>
     - icon: fa-linkedin fa-lg
@@ -16,5 +20,11 @@ navbar:
       href: http://github.com/sarahvititoe/
 output:
   html_document: 
+<<<<<<< HEAD
     theme: lumen
     
+=======
+    theme: null
+    highlight: null
+    css: bootstrap.min.css
+>>>>>>> 3ff51950f8a7de3d4a079aab3a1866071316d539
