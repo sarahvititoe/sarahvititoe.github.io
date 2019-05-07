@@ -16,4 +16,9 @@ navbar:
       href: http://github.com/sarahvititoe/
 output:
   html_document: 
+<<<<<<< HEAD
     theme: lumen
+=======
+    theme: lumen
+
+>>>>>>> 126f8f0e11f123b14f5f148eb093b4b84c0634aa
