@@ -1,0 +1,167 @@
+---
+title: "Fundraising Data Visualizations for a Non-Profit"
+---
+
+```{r, message=FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(plotly)
+```
+
+```{r, message=FALSE, echo = FALSE}
+d_id <- read_csv("./portfolio/stand/raw/donor.csv", skip = 4) %>% 
+  janitor::clean_names() %>% 
+  select(donorfirstname, donorlastname) %>% 
+  distinct() %>% 
+  mutate(donor_id = str_c("d", 1:nrow(.))) 
+
+p_id <- read_csv("./portfolio/stand/raw/participants.csv", skip = 4) %>% 
+  janitor::clean_names() %>% 
+  select(participantfirstname, participantlastname) %>% 
+  distinct() %>% 
+  mutate(participant_id = str_c("P", 1:nrow(.))) 
+
+y_id <- tibble( 
+  eventfiscalyear = c(2015, 2016, 2018, 2019), 
+  stand_year = c("Year 3", "Year 4", "Year 5", "Year 6"))
+
+donor <- read_csv("./portfolio/stand/raw/donor.csv", skip = 4) %>% 
+  janitor::clean_names() %>% 
+  left_join(d_id) %>% 
+  left_join(p_id) %>% 
+  left_join(y_id) %>% 
+  select(donor_id, participant_id, amount = donationamount, donation_date = donationentereddate,  stand_date = eventenddate, stand_year) 
+
+# read in and clean participants csv
+participants <- read_csv("./portfolio/stand/raw/participants.csv", skip = 4) %>% 
+  janitor::clean_names() %>% 
+  left_join(p_id) %>% 
+  left_join(y_id) %>% 
+  select(participant_id, stand_year) 
+```
+
+### Background
+
+This analysis was completed to help the executive board of a non-profit in New York understand their donation trends for their year-long fundraising efforts by participants in addition to coprorate sponsorships and fundraising events. The fundrasing season culminated in a final celebration where a fundraising total for the year was revealed to participants. Data in this analysis were derived from querying the fundraising platform, and excludes all funds raised through corporate sponsorship or fundraising events. My role was to help the executive board understand trends in participant-level fundraising efforts over the fundrasing season. 
+
+
+### Fundraising Efforts over Time 
+
+Below is a plotly plot I made to help the executive board understand overall donation trends over time. While the original plot contained indentifiable information, these plots have been de-identified, and the fundraising ammounts have been converted into a percentage of the annual fundraising goal to maintain privacy of the organization. 
+
+
+```{r don_funct}
+accumulate_don <- function(df){
+  x <- df %>% 
+  distinct() %>% 
+  mutate_at(vars(stand_date, donation_date), funs(lubridate::as_date(.))) %>% 
+  mutate(days_until = as.integer(-(stand_date - donation_date))) %>%
+  mutate(stand_year = as.character(stand_year)) %>% 
+  distinct(days_until, stand_year, donor_id, amount) %>% 
+  mutate(cum_donation = cumsum(amount)) %>% 
+  mutate(cum_donation = cum_donation/25000*100) %>% 
+  select(stand_year, days_until, cum_donation)
+  
+  x
+}
+```
+
+```{r don_plot, fig.width = 10, fig.height = 7}
+# apply funciton to each df 
+cum_d <- donor %>% 
+  mutate(nest_year = stand_year) %>% 
+  group_by(nest_year) %>% 
+  nest() %>% 
+  mutate(data = map(data, accumulate_don)) %>% 
+  unnest() %>% 
+  select(-nest_year) %>% 
+  mutate(stand_year = as.factor(stand_year)) %>% 
+  filter(days_until <= 0)
+
+cum_d %>% 
+  plot_ly(
+    x = ~days_until, 
+    y = ~cum_donation,
+    hoverinfo = "text",
+    split = ~stand_year,
+    type = 'scatter',
+    mode = 'lines',
+    colors = c("#9CEAF5", "#F0FF3D", "#e93f33", "#4d2d99"), 
+    color = ~stand_year, 
+    text = ~paste(round(cum_donation, 2), "% of our goal fundraised and", -days_until, "day(s)\nto go until the", stand_year, "fundraising total reveal!")
+  )%>% 
+  layout(
+    xaxis = list(
+      title = "Days Until The Fundraising Reveal",
+      zeroline = F
+    ),
+    yaxis = list(
+      title = "Percent of Annual Fundraising Goal",
+      zeroline = F
+    ), 
+    title = "Participant Fundraising Leading Up to the Total Reveal")
+```
+
+### Fundraising at the Participant Level 
+Another goal of the executive board was to look at the trends of individual fundraisers during the Year 5 season to identify the trends of the top fundraisers. After this analysis, we reached out to our top fundraiser (participant #P73) and asked him to share tips and tricks with other participants. Since this plotly plot is interactive, we were also able to quickly compare top fundraisers to each other, or remove outliers like #P73 from our dataset to see what the general trend for the majority of our dancers looked like.
+
+I made a similar plot for the Year 6 fundraising season, and updatd it with new data periodically to help the executive gauge the success of individual fundraisers over time. This way, the leadership team was able to target the individual participant, and provide support, advice, or shoutouts as needed to motivate fundraising.
+
+As a participant myself, I used this chart to evalutate my own fundraising trajectory **(I'm participant #`r p_id %>% filter(participantlastname == "Vititoe") %>%  select(participant_id)`!)**, and to compare my fundraising efforts to our top fundraiser, #P73. Feel free to click on my ID to explore this plot a little more, and see how I compared to other fundraisers!
+
+```{r}
+individual_donation_acc <- function(df){
+  x <- df %>% 
+  distinct() %>% 
+  mutate_at(vars(stand_date, donation_date), funs(lubridate::as_date(.))) %>% 
+  mutate(days_until = as.integer(-(stand_date - donation_date))) %>%
+  mutate(stand_year = as.character(stand_year)) %>% 
+  distinct(days_until, stand_year, donor_id, amount, participant_id) %>% 
+  group_by(participant_id) %>% 
+  mutate(cum_donation = cumsum(amount)) %>% 
+  select(stand_year, days_until, cum_donation, participant_id, amount) %>% 
+  ungroup()
+
+  x
+}
+```
+
+```{r, fig.width = 10, fig.height = 7}
+i_lvl_cum_d_19 <- donor %>% 
+  mutate(nest_year = stand_year) %>% 
+  group_by(nest_year) %>% 
+  nest() %>% 
+  mutate(data = map(data, individual_donation_acc)) %>% 
+  unnest() %>% 
+  filter(nest_year == "Year 5") %>% 
+  select(-nest_year) %>% 
+  mutate(stand_year = as.factor(stand_year)) %>% 
+  filter(days_until <= 0, is.na(participant_id) == FALSE) %>% 
+  mutate(cum_donation = cum_donation/1000*100) 
+
+my_colors <- colors(distinct = TRUE)
+set.seed(100)
+my_colors <- sample(my_colors, 200)
+
+i_lvl_cum_d_19 %>% 
+  plot_ly(
+    x = ~days_until, 
+    y = ~cum_donation,
+    hoverinfo = "text",
+    split = ~participant_id,
+    type = 'scatter',
+    mode = 'lines',
+    color = ~participant_id, 
+    colors = c("#F0FF3D", "#e93f33", "#4d2d99"), 
+    text = ~paste("Dancer", participant_id, "has raised ", cum_donation, "% towards their goal so far, with\n", -days_until, "day(s) to go until the fundraising total reveal!")) %>% 
+  layout(
+    xaxis = list(
+      title = "Days Until The Fundrasing Total Reveal",
+      zeroline = F
+    ),
+    yaxis = list(
+      title = "Percent of Fundraising Goal",
+      zeroline = F
+    ), 
+    title = "Participant-Level Fundraising for the Year 5 Season")
+```

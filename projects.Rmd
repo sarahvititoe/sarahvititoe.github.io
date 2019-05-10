@@ -1,4 +1,38 @@
 ---
-title: "Coming Soon"
-
+title: "Project Portfolio"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    toc_depth: 5
 ---
+ 
+# More Projects Coming Soon!
+
+*Projects are categorized by topic, and may be listed more than once if they are relevant to multiple topics. Click on the project title to learn more.*
+
+### Biostatistics
+
+### Cancer Research
+
+### Chronic Disease Research
+
+### Epidemiology 
+
+### Genetics, Epigenetics, and Biomarkers
+
+### Pharmacoepidemiology and Clinical Trials
+
+### Masters Thesis
+
+### Microsoft Access/SQL
+
+- An [Access Database for a Mock Research Study](portfolio_db.html): Final Project for Relational Databases and SQL Programming for Research and Data Science. 
+
+<img src="portfolio/access/screenshot_entry.png" style="width:33%">
+
+### R/RStudio
+
+- [Fundraising Data Visualizations for a Non-Profit](portfolio_nonprofit.html) in New York
+
+<img src="portfolio/stand/screenshot_yearly.png" style="width:33%">

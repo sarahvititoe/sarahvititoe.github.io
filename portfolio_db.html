@@ -11,7 +11,7 @@
 
 
 
-<title>Project Portfolio</title>
+<title>Access Database</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,9 +19,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -172,101 +169,6 @@ $(document).ready(function () {
 
 
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3,h4,h5",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
-
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
-
-
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -317,55 +219,28 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Project Portfolio</h1>
+<h1 class="title toc-ignore">Access Database</h1>
 
 </div>
 
 
-<div id="more-projects-coming-soon" class="section level1">
-<h1>More Projects Coming Soon!</h1>
-<p><em>Projects are categorized by topic, and may be listed more than once if they are relevant to multiple topics. Click on the project title to learn more.</em></p>
-<div id="biostatistics" class="section level3">
-<h3>Biostatistics</h3>
+<div id="background" class="section level3">
+<h3>Background</h3>
+<p>This database was built as a final project for <strong>P8180: Relational Databases and SQL Programming for Research and Data Science</strong>, by <strong>Professor Debra D’Angelo</strong>. I was enrolled in the course for the Spring semester of 2018 at Columbia, and served as a graduate teaching assistant for the course for one semester in the fall of 2018, and two semesters in the spring of 2019. More information about my TA position can be found <a href="cv.html">here</a>.</p>
 </div>
-<div id="cancer-research" class="section level3">
-<h3>Cancer Research</h3>
+<div id="about" class="section level3">
+<h3>About</h3>
+<p>The database was completed in <strong>Microsoft Access</strong>, and queries were written in <strong>SQL</strong>. The database colors were selected to match the University of Florida’s branding guidelines, and pay tribute to my alma mater while showcasing my ability to create an on-brand, front-end of my database. It is important to note that the study in this database is fictional, and not affiliated with any academic institution. While only dummy data exists in the database, the database was deisgned to be HIPAA compliant.</p>
+<p>This database is modeled after a simplified version pilot study I had been working on, which was measuring the impact of physicial activity on the gut microbiome. The database includes forms that walk the clinical study team through an intake form at the baseline visit, collection of physical activity variables in subsequent visits, as well as a form to help track lab samples and record their results. All forms include validation rules to guard against data entry errors. The database also includes reports generated from queries of the fictional data in the database.</p>
 </div>
-<div id="chronic-disease-research" class="section level3">
-<h3>Chronic Disease Research</h3>
-</div>
-<div id="epidemiology" class="section level3">
-<h3>Epidemiology</h3>
-</div>
-<div id="genetics-epigenetics-and-biomarkers" class="section level3">
-<h3>Genetics, Epigenetics, and Biomarkers</h3>
-</div>
-<div id="pharmacoepidemiology-and-clinical-trials" class="section level3">
-<h3>Pharmacoepidemiology and Clinical Trials</h3>
-</div>
-<div id="masters-thesis" class="section level3">
-<h3>Masters Thesis</h3>
-</div>
-<div id="microsoft-accesssql" class="section level3">
-<h3>Microsoft Access/SQL</h3>
-<ul>
-<li>An <a href="portfolio_db.html">Access Database for a Mock Research Study</a>: Final Project for Relational Databases and SQL Programming for Research and Data Science.</li>
-</ul>
-<p><img src="portfolio/access/screenshot_entry.png" style="width:33%"></p>
-</div>
-<div id="rrstudio" class="section level3">
-<h3>R/RStudio</h3>
-<ul>
-<li><a href="portfolio_nonprofit.html">Fundraising Data Visualizations for a Non-Profit</a> in New York</li>
-</ul>
-<p><img src="portfolio/stand/screenshot_yearly.png" style="width:33%"></p>
-</div>
+<div id="database" class="section level3">
+<h3>Database</h3>
+<p><strong>The database can be downloaded <a href="./portfolio/access/vititoe_p8180_database.accdb">here</a>.</strong> You will need to enter the password <em>“gators”</em> in order to access the file.</p>
+<p><img src="portfolio/access/screenshot_home.png" style="width:40%"> <img src="portfolio/access/screenshot_entry.png" style="width:37%"></p>
 </div>
 
 
 
-</div>
-</div>
 
 </div>
 
