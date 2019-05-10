@@ -11,19 +11,7 @@ output:
 
 *Projects are categorized by topic, and may be listed more than once if they are relevant to multiple topics. Click on the project title to learn more.*
 
-### Biostatistics
 
-### Cancer Research
-
-### Chronic Disease Research
-
-### Epidemiology 
-
-### Genetics, Epigenetics, and Biomarkers
-
-### Pharmacoepidemiology and Clinical Trials
-
-### Masters Thesis
 
 ### Microsoft Access/SQL
 
