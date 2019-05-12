@@ -1,0 +1,117 @@
+---
+title: '\#TidyTuesday'
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    toc_depth: 5
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(rvest)
+library(httr)
+```
+
+### May 7th, 2019: Global Student to Teacher Ratios 
+This week's dataset is about student to teacher ratios. My mom has been a teacher for almost two decades now, at the high-school level, so this analysis is dedicated to her! **Happy early mother's day, mom!** The official #TidyTuesday repository can be viewed [here](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-05-07), and all code used to create these plots can be viewed [here](tidytues_05_09_19.html). 
+
+My mom has spent most of her time teaching at Palm Bay Magnet Senior High School in Melbourne, FL, but two years ago she and my dad moved to Dayton Ohio, and she currently teaches at Trotwood-Madison High School. I think it'd be interesting to see where the student to teacher ratio's fall among these global averages that the #TidyTuesday project shared. I'm going to use data about student:teacher ratios, along with a few other tidbits that would be important to my mom to suggest the ideal country for her to move to.
+
+First, I'm going to try to extract data from the US News and World Rankings for these two schools, so I can add them into our dataset. 
+
+```{r one}
+# create a tibble with our URLs for data
+mom_hs <- tibble(
+  edulit_ind = c("pbhs", "tmhs"), 
+  indicator = "Secondary School", 
+  country = c("Melbourne, FL, USA", "Trotwood City, OH, USA"),
+  country_code = c("FLA", "OHI"),
+  year = 2019, 
+  url = c( "https://www.usnews.com/education/best-high-schools/florida/districts/brevard-public-schools/palm-bay-magnet-senior-high-school-4695", "https://www.usnews.com/education/best-high-schools/ohio/districts/trotwood-madison-city/trotwood-madison-high-school-15643"), 
+  flags = "Data from US News and World Rankings", 
+  mom_school = "Yes") %>% 
+  group_by(edulit_ind, country, url) %>% 
+  nest() %>% 
+  # extract the nodes with the data for student ratios
+  mutate(url = map(url, ~read_html(.))) %>% 
+  mutate(url = map(url, ~html_nodes(., ".display-inline-for-small-only"))) %>% 
+  mutate(url = map(url, ~html_text(.))) %>% 
+  mutate(url = map(url, ~as_tibble(.))) %>% 
+  mutate(url = map(url, ~filter(., str_detect(value, "\\:")))) %>% 
+  unnest() %>% 
+  separate(value, into = c("student_ratio", "student_ratio_denom"), by = "\\:") %>% 
+  mutate(student_ratio = as.numeric(student_ratio)) %>% 
+  select(-student_ratio_denom)
+```
+
+[Palm Bay Magnent High School](https://www.usnews.com/education/best-high-schools/florida/districts/brevard-public-schools/palm-bay-magnet-senior-high-school-4695) has a student:teacher ratio of **`r mom_hs %>% filter(edulit_ind == "pbhs") %>% select(student_ratio)`:1**, and [Trotwood Madison High School](https://www.usnews.com/education/best-high-schools/ohio/districts/trotwood-madison-city/trotwood-madison-high-school-15643) has a student:teacher ratio of **`r mom_hs %>% filter(edulit_ind == "tmhs") %>% select(student_ratio)`:1**. 
+
+Now, we'll join the data from mom's high school to the dataset from #TidyTuesday. We'll also filter to get only secondary schools, and select only the data that's the most recent. We also have quite a few data points that aren't countries, but rather regions, so we'll get rid of those too. 
+
+```{r, message = FALSE}
+student_ratio <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-05-07/student_teacher_ratio.csv")
+
+schools <- student_ratio %>% 
+  mutate(mom_school = "No") %>% 
+  select(-flag_codes) %>% 
+  union(mom_hs) %>% 
+  filter(str_detect(indicator, "[Ss]econdary"), str_detect(country_code, "[A-Za-z][A-Za-z][A-Za-z]") == TRUE) %>% 
+  group_by(edulit_ind, indicator, country, country_code) %>% 
+  top_n(1, year) %>% 
+
+  group_by(country, country_code, mom_school) %>% 
+  summarise(student_ratio = as.numeric(mean(student_ratio, na.rm = TRUE)), student_ratio = round(student_ratio, 1)) %>% 
+  filter(!is.nan(student_ratio)) %>% 
+  ungroup()
+```
+
+And now we have a map of student-teacher ratios! Every country is represented by their two-digit country code, while PBMHS is represented by the code "FL", and TMHS is represented by the code "OH". Tile location approximates country/school geography. 
+
+```{r, message = FALSE}
+world <- read_csv("./portfolio/tidy tuesday/worldtilegrid.csv") %>% 
+  add_row(alpha.2 = "OH", alpha.3 = "OHI", x = 2, y = 1, region = "Americas", sub.region = "Northern America") %>% 
+  add_row(alpha.2 = "FL", alpha.3 = "FLA", x = 2, y = 2, region = "Americas", sub.region = "Northwen America") %>% 
+  select(alpha.2, alpha.3, x, y, region, sub.region) %>% 
+  inner_join(schools, by = c("alpha.3" = "country_code")) %>% 
+  mutate(alpha.2 = ifelse(is.na(alpha.2) == TRUE, "NA", alpha.2))
+
+map <-png::readPNG("./portfolio/tidy tuesday/world_outline.png")
+
+ggplot(world, aes(xmin = x, ymin = y, xmax = x + 1, ymax = y + 1, fill = student_ratio)) +
+  annotation_custom(grid::rasterGrob(map, 
+                                 width = unit(1,"npc"), 
+                                 height = unit(1,"npc")), 
+                      -Inf, Inf, -Inf, Inf) +
+  geom_rect(color = "white") +
+  theme_minimal() +
+  theme(panel.grid = element_blank(), axis.text = element_blank(), axis.title = element_blank(), legend.position = "bottom") +
+  geom_text(aes(x = x, y = y, label = alpha.2), color = "white",  nudge_x = 0.5, nudge_y = -0.5, size = 3) +
+  scale_y_reverse() + 
+  viridis::scale_fill_viridis(option = "inferno", end = .9, trans = "log", name = "Student to Teacher Ratio", breaks = c(6, 17, 40, 90), labels = c("6:1", "17:1", "40:1", "90:1"), direction = -1)
+```
+
+Since there are `r schools %>% select(country_code, country, student_ratio) %>% filter(student_ratio <= 19) %>% filter(country_code != "FL" & country_code != "OH") %>%  tally()` countries with a student ratio that's at least as good as her current skills, we need to narrow down my mom's options a little bit more. Knowing my mom, she'll want to live somewhere that's relatively close to family. My little sister is hoping to move to Germany, my brother and quite a few other family members live in Illinois, and I'll be living in Califonia soon, and we have family and friends in Florida. Keeping that in mind, let's limit our search to Europe (except for Northern-Europe - too cold!), North America, Central America, and the Caribbean, and have a student teacher ratio as good or better than 19:1. 
+
+```{r}
+world %>% 
+  filter(region %in% c("Americas", "Europe"), sub.region != "South America", sub.region != "Northern Europe", student_ratio <= 19) %>% 
+  arrange(student_ratio) %>% 
+  mutate(country = reorder(country, student_ratio)) %>% 
+  ggplot(aes(x=country, y=student_ratio)) +
+    geom_segment( aes(x=country ,xend=country, y=0, yend = student_ratio), color="grey") +
+    geom_point(size=3, aes(color = mom_school)) +
+    coord_flip() +
+    theme_minimal() + 
+    theme(
+      panel.grid.minor.y = element_blank(),
+      panel.grid.major.y = element_blank(),
+      legend.position="none"
+    ) + 
+  viridis::scale_color_viridis(discrete = TRUE, begin = .5, end = .8, option = "inferno") +
+  labs(y  = "Students per Teacher in Secondary Schools", x = "")
+```
+
+Here you go mom! Hope this gives you some ideas next time you're brainstorming a dream country to move to!

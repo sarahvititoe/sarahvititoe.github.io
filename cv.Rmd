@@ -19,7 +19,7 @@ sarahvititoe23@gmail.com | [linkedin.com/in/sarahvititoe](linkedin.com/in/sarahv
 
 * *Thesis:* The Role of Gut Microbiota on CpG Island Methylation Phenotype CIMP Colorectal Cancer Tumorigenesis
 
-* *Graduate Teaching Assistant:* SQL and Relational Databases for Research and Data Science (one semester Fall 2018, two semesters Spring 2019)
+* [*Graduate Teaching Assistant:*](portfolio_db.html) SQL and Relational Databases for Research and Data Science (one semester Fall 2018, two semesters Spring 2019)
 
 * *Leadership:* Healthcare Data Analytics Club at Mailman SPH, Co-President 2018 
 
@@ -88,19 +88,18 @@ sarahvititoe23@gmail.com | [linkedin.com/in/sarahvititoe](linkedin.com/in/sarahv
 
 - Aided community health workers in assessing the readability of patient education materials. 
 
-
 # Skills 
 ### Statistical Programming Languages
-- SQL/MySQL
-- R/R Studio/R Markdown
-- Github
+- [SQL/MySQL](portfolio_db.html)
+- [R/R Studio/R Markdown](projects.html)
+- [Github](http://github.com/sarahvititoe/)
 - SAS
 - Python (basic)
-- Microsoft Access & Excel
+- Microsoft [Access](portfolio_db.html) & Excel
 
 ### Foreign Languages
 - Spanish (limited working proficiency), including 6-week immersion program in the Dominican Republic
 
 # Community Involvement
 ###Children’s Miracle Network Hospital Dance Marathons
-6 years of involvement in two large-scale philanthropies, [The Stand: New York City Dance Marathon](http://www.dmstandnyc.org/) and [Dance Marathon at UF](https://floridadm.org/), supporting [Children's Miracle Network Hospitals](https://childrensmiraclenetworkhospitals.org/). Roles included **Data Strategist** (The Stand, 2019), **Director of Recruitment** (The Stand 2018), and **Assistant Director of Community Outreach** (DM at UF, 2017)
+6 years of involvement in two large-scale philanthropies, [The Stand: New York City Dance Marathon](http://www.dmstandnyc.org/) and [Dance Marathon at UF](https://floridadm.org/), supporting [Children's Miracle Network Hospitals](https://childrensmiraclenetworkhospitals.org/). Roles included [**Data Strategist**](portfolio_nonprofit.html) (The Stand, 2019), **Director of Recruitment** (The Stand 2018), and **Assistant Director of Community Outreach** (DM at UF, 2017)
