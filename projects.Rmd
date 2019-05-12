@@ -23,4 +23,4 @@ output:
 
 <img src="portfolio/stand/screenshot_yearly.png" style="width:33%">
 
-- [My #TidyTuesday Projects](portfolio_tidytues.html): A collection of mini-projects completed as part of the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) initiative by the R for Data Science community. These are just for fun, and something I do to practice my skills!
+- [My #TidyTuesday Projects](tidy_tuesday.html): A collection of mini-projects completed as part of the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) initiative by the R for Data Science community. These are just for fun, and something I do to practice my skills!
