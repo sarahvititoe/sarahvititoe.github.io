@@ -94,6 +94,8 @@ ggplot(world, aes(xmin = x, ymin = y, xmax = x + 1, ymax = y + 1, fill = student
   geom_text(aes(x = x, y = y, label = alpha.2), color = "white",  nudge_x = 0.5, nudge_y = -0.5, size = 3) +
   scale_y_reverse() + 
   viridis::scale_fill_viridis(option = "inferno", end = .9, trans = "log", name = "Student to Teacher Ratio", breaks = c(6, 17, 40, 90), labels = c("6:1", "17:1", "40:1", "90:1"), direction = -1)
+
+ggsave("./portfolio/tidy tuesday/saved/05_09_2019.png", width = 8, height = 5, units = "in", dpi = 500)
 ```
 
 Since there are `r schools %>% select(country_code, country, student_ratio) %>% filter(student_ratio <= 19) %>% filter(country_code != "FL" & country_code != "OH") %>%  tally()` countries with a student ratio that's at least as good as her current skills, we need to narrow down my mom's options a little bit more. Knowing my mom, she'll want to live somewhere that's relatively close to family. My little sister is hoping to move to Germany, my brother and quite a few other family members live in Illinois, and I'll be living in Califonia soon, and we have family and friends in Florida. Keeping that in mind, let's limit our search to Europe (except for Northern-Europe - too cold!), North America, Central America, and the Caribbean, and have a student teacher ratio as good or better than 19:1. 

@@ -1,0 +1,102 @@
+[
+	[
+		{
+			"calories_burned": 70,
+			"category_names": "Total Body",
+			"coaching_type": "yoga",
+			"comments_count": 0,
+			"completed_at": "2015-10-12T20:12:55Z",
+			"created_at": "2015-10-12T19:53:51Z",
+			"duration": 780,
+			"grade": 3,
+			"ignore_score": false,
+			"initial": false,
+			"name": "Easy Flow",
+			"options": {
+				"arms_shoulders": 0,
+				"back": 0,
+				"cardio": 0,
+				"chest": 0,
+				"core": 0,
+				"difficulty": 0,
+				"duration": 0,
+				"impact": 0,
+				"legs": 0,
+				"probability": 0
+			},
+			"start_date": "2015-10-12T00:00:00Z",
+			"state": "completed",
+			"stats": [
+				"70 calories burned",
+				"3 Sessions completed"
+			],
+			"utc_offset": -14400
+		},
+		{
+			"calories_burned": 87,
+			"category_names": "Total Body",
+			"coaching_type": "yoga",
+			"comments_count": 0,
+			"completed_at": "2015-09-14T19:25:07Z",
+			"created_at": "2015-08-03T02:40:57Z",
+			"duration": 1515.3333333333326,
+			"grade": 1,
+			"ignore_score": false,
+			"initial": false,
+			"name": "Shoulders \u0026 Twists",
+			"options": {
+				"arms_shoulders": 1,
+				"back": 1,
+				"cardio": 0,
+				"chest": 1,
+				"core": 1,
+				"difficulty": 0,
+				"duration": 0,
+				"impact": 0,
+				"legs": 1,
+				"probability": 0
+			},
+			"start_date": "2015-08-03T00:00:00Z",
+			"state": "completed",
+			"stats": [
+				"87 calories burned",
+				"60 seconds Thread the Needle",
+				"3 Sessions completed"
+			],
+			"utc_offset": -14400
+		},
+		{
+			"calories_burned": 77,
+			"category_names": "Total Body",
+			"coaching_type": "yoga",
+			"comments_count": 0,
+			"completed_at": "2015-08-03T02:38:46Z",
+			"created_at": "2015-08-03T00:49:33Z",
+			"duration": 1147.25,
+			"grade": 3,
+			"ignore_score": false,
+			"initial": true,
+			"name": "Yoga Intro",
+			"options": {
+				"arms_shoulders": 1,
+				"back": 1,
+				"cardio": 0,
+				"chest": 1,
+				"core": 1,
+				"difficulty": -1,
+				"duration": -1,
+				"impact": 0,
+				"legs": 1,
+				"probability": 0
+			},
+			"start_date": "2015-08-03T00:00:00Z",
+			"state": "completed",
+			"stats": [
+				"77 calories burned",
+				"40 seconds Seated Twist",
+				"3 Sessions completed"
+			],
+			"utc_offset": -14400
+		}
+	]
+]

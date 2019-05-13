@@ -1,0 +1,6 @@
+﻿race_name,race_date,race_city,race_state,race_distance,race_distance_unit,race_bib_number,race_finish_ms,race_time_type,race_pace,race_pace_unit,race_overall_rank_percentile,race_division,race_divsion_rank_percentile,race_gender_rank_percentile
+Humana Rock 'N' Roll Chicago 10k ,22-Jul-18,Chicago,IL,10,kilometers,#20999,1:15:05,chip,00:12:05,per mile,0.402409639,F18-24,0.211180124,0.473647224
+NYCRuns Govenors Isalnd 10k,29-Sep-18,New York ,NY,10,kilometers,#5843,1:12:04,chip,00:11:37,per mile,0.090387374,F20-29,0.122222222,0.121372032
+Dayton Turkey Trot 5k ,25-Nov-18,Dayton,OH,5,kilometers,#2176,0:32:47,chip,00:10:33,per mile,0.669141914,F20-24,0.716666667,0.786472149
+Cupid's Chase 5K Manhattan ,9-Feb-19,New York ,NY,5,kilometers,#169,0:34:23,gun,00:11:04,per mile,0.365079365,F20-24,,0.478873239
+Shape Women's Half Marathon,14-Apr-19,New York ,NY,13.1,miles,#3922,2:43:09,chip,00:12:27,per mile,0.224157578,F20-24,0.120639535,0.224157578

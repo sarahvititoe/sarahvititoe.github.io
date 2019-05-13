@@ -1,0 +1,19 @@
+[{
+  "dateTime" : "03/23/19 18:48:17",
+  "value" : {
+    "exerciseId" : 20747986044,
+    "runVO2Max" : 36.466860000000004,
+    "runVO2MaxError" : 2.03351,
+    "filteredRunVO2Max" : 34.36009,
+    "filteredRunVO2MaxError" : 1.4114000000000002
+  }
+},{
+  "dateTime" : "04/14/19 12:08:41",
+  "value" : {
+    "exerciseId" : 21268567591,
+    "runVO2Max" : 35.41508,
+    "runVO2MaxError" : 2.95296,
+    "filteredRunVO2Max" : 34.84496,
+    "filteredRunVO2MaxError" : 1.3571700000000002
+  }
+}]

@@ -1,0 +1,45 @@
+[{
+  "achievementType" : "PERSONAL_RECORD",
+  "challengeType" : "WORK_WEEK",
+  "challengeName" : "Workweek Hustle",
+  "title" : "Personal Best",
+  "comment" : "60,373 steps",
+  "description" : "You’re breakin’ records like an olympian! 60,373 steps is your new record for this challenge.",
+  "timesAchieved" : 1,
+  "lastEarned" : "2018-06-02T13:01:54.671-04:00",
+  "level" : {
+    "metric" : "STEPS",
+    "value" : 60373.0
+  }
+},{
+  "achievementType" : "PERSONAL_RECORD",
+  "challengeType" : "GOAL_DAY",
+  "challengeName" : "Goal Day",
+  "title" : "Personal Best",
+  "comment" : "22,162 steps",
+  "description" : "You’re breakin’ records like an olympian! 22,162 steps is your new record for this challenge.",
+  "timesAchieved" : 1,
+  "lastEarned" : "2018-07-23T01:03:36.240-04:00",
+  "level" : {
+    "metric" : "STEPS",
+    "value" : 22162.0
+  }
+},{
+  "achievementType" : "WINNER",
+  "challengeType" : "WORK_WEEK",
+  "challengeName" : "Workweek Hustle",
+  "title" : "1st Place",
+  "comment" : "Earned 1 time",
+  "description" : "You crushed the Workweek Hustle challenge with 60,373 steps",
+  "timesAchieved" : 1,
+  "lastEarned" : "2018-06-02T13:01:54.670-04:00"
+},{
+  "achievementType" : "WINNER",
+  "challengeType" : "GOAL_DAY",
+  "challengeName" : "Goal Day",
+  "title" : "Goal Completed",
+  "comment" : "Earned 1 time",
+  "description" : "You crushed the Goal Day challenge with 13,072 steps",
+  "timesAchieved" : 1,
+  "lastEarned" : "2016-07-22T00:01:48.283-04:00"
+}]
