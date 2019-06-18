@@ -1,4 +1,598 @@
 [{
+  "logId" : 10911857796,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Lunch Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 570,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 3
+  },
+  "nutritionalValues" : {
+    "calories" : 570,
+    "fat" : 24.0,
+    "fiber" : 6.0,
+    "carbs" : 58.0,
+    "sodium" : 1223.0,
+    "protein" : 31.0
+  },
+  "logDate" : "2017-05-09",
+  "favorite" : false
+},{
+  "logId" : 10911903802,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Breakfast Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 208,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 1
+  },
+  "nutritionalValues" : {
+    "calories" : 208,
+    "fat" : 5.0,
+    "fiber" : 3.0,
+    "carbs" : 35.0,
+    "sodium" : 285.0,
+    "protein" : 6.0
+  },
+  "logDate" : "2017-05-09",
+  "favorite" : false
+},{
+  "logId" : 10897724797,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Lunch Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 390,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 3
+  },
+  "nutritionalValues" : {
+    "calories" : 390,
+    "fat" : 12.0,
+    "fiber" : 2.0,
+    "carbs" : 50.0,
+    "sodium" : 380.0,
+    "protein" : 21.0
+  },
+  "logDate" : "2017-05-08",
+  "favorite" : false
+},{
+  "logId" : 10897624862,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Breakfast Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 160,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 1
+  },
+  "nutritionalValues" : {
+    "calories" : 160,
+    "fat" : 2.0,
+    "fiber" : 3.0,
+    "carbs" : 32.0,
+    "sodium" : 260.0,
+    "protein" : 4.0
+  },
+  "logDate" : "2017-05-08",
+  "favorite" : false
+},{
+  "logId" : 10896335154,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Snacks Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 424,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 7
+  },
+  "nutritionalValues" : {
+    "calories" : 424,
+    "fat" : 9.0,
+    "fiber" : 7.0,
+    "carbs" : 49.0,
+    "sodium" : 99.0,
+    "protein" : 6.0
+  },
+  "logDate" : "2017-05-07",
+  "favorite" : false
+},{
+  "logId" : 10896526494,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Dinner Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 279,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 5
+  },
+  "nutritionalValues" : {
+    "calories" : 279,
+    "fat" : 13.0,
+    "fiber" : 1.0,
+    "carbs" : 12.0,
+    "sodium" : 288.0,
+    "protein" : 29.0
+  },
+  "logDate" : "2017-05-07",
+  "favorite" : false
+},{
+  "logId" : 10891049666,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Lunch Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 615,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 3
+  },
+  "nutritionalValues" : {
+    "calories" : 615,
+    "fat" : 30.0,
+    "fiber" : 6.0,
+    "carbs" : 74.0,
+    "sodium" : 1450.0,
+    "protein" : 16.0
+  },
+  "logDate" : "2017-05-07",
+  "favorite" : false
+},{
+  "logId" : 10887889285,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Breakfast Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 196,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 1
+  },
+  "nutritionalValues" : {
+    "calories" : 196,
+    "fat" : 2.0,
+    "fiber" : 3.0,
+    "carbs" : 37.0,
+    "sodium" : 301.0,
+    "protein" : 7.0
+  },
+  "logDate" : "2017-05-07",
+  "favorite" : false
+},{
+  "logId" : 10877762959,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Lunch Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 462,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 3
+  },
+  "nutritionalValues" : {
+    "calories" : 462,
+    "fat" : 30.0,
+    "fiber" : 9.0,
+    "carbs" : 26.0,
+    "sodium" : 377.0,
+    "protein" : 26.0
+  },
+  "logDate" : "2017-05-05",
+  "favorite" : false
+},{
+  "logId" : 10871114600,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Breakfast Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 415,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 1
+  },
+  "nutritionalValues" : {
+    "calories" : 415,
+    "fat" : 18.0,
+    "fiber" : 7.0,
+    "carbs" : 52.0,
+    "sodium" : 285.0,
+    "protein" : 14.0
+  },
+  "logDate" : "2017-05-05",
+  "favorite" : false
+},{
+  "logId" : 10858610138,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Breakfast Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 288,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 1
+  },
+  "nutritionalValues" : {
+    "calories" : 288,
+    "fat" : 12.0,
+    "fiber" : 4.0,
+    "carbs" : 34.0,
+    "sodium" : 133.0,
+    "protein" : 8.0
+  },
+  "logDate" : "2017-05-04",
+  "favorite" : false
+},{
+  "logId" : 10853704192,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Snacks Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 170,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 7
+  },
+  "nutritionalValues" : {
+    "calories" : 170,
+    "fat" : 10.0,
+    "fiber" : 2.0,
+    "carbs" : 20.0,
+    "sodium" : 24.0,
+    "protein" : 4.0
+  },
+  "logDate" : "2017-05-03",
+  "favorite" : false
+},{
+  "logId" : 10853663970,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Dinner Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 430,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 5
+  },
+  "nutritionalValues" : {
+    "calories" : 430,
+    "fat" : 24.0,
+    "fiber" : 7.0,
+    "carbs" : 27.0,
+    "sodium" : 374.0,
+    "protein" : 30.0
+  },
+  "logDate" : "2017-05-03",
+  "favorite" : false
+},{
+  "logId" : 10853981439,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Lunch Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 579,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 3
+  },
+  "nutritionalValues" : {
+    "calories" : 579,
+    "fat" : 41.0,
+    "fiber" : 14.0,
+    "carbs" : 32.0,
+    "sodium" : 382.0,
+    "protein" : 27.0
+  },
+  "logDate" : "2017-05-03",
+  "favorite" : false
+},{
+  "logId" : 10854689404,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Breakfast Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 368,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 1
+  },
+  "nutritionalValues" : {
+    "calories" : 368,
+    "fat" : 7.0,
+    "fiber" : 6.0,
+    "carbs" : 61.0,
+    "sodium" : 363.0,
+    "protein" : 9.0
+  },
+  "logDate" : "2017-05-03",
+  "favorite" : false
+},{
+  "logId" : 10843673724,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Lunch Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 2500,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 3
+  },
+  "nutritionalValues" : {
+    "calories" : 2500,
+    "fat" : 0.0,
+    "fiber" : 0.0,
+    "carbs" : 0.0,
+    "sodium" : 0.0,
+    "protein" : 0.0
+  },
+  "logDate" : "2017-05-02",
+  "favorite" : false
+},{
+  "logId" : 10829663180,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Snacks Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 190,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 7
+  },
+  "nutritionalValues" : {
+    "calories" : 190,
+    "fat" : 0.0,
+    "fiber" : 1.0,
+    "carbs" : 37.0,
+    "sodium" : 140.0,
+    "protein" : 9.0
+  },
+  "logDate" : "2017-05-01",
+  "favorite" : false
+},{
+  "logId" : 10828304426,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Dinner Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 319,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 5
+  },
+  "nutritionalValues" : {
+    "calories" : 319,
+    "fat" : 11.0,
+    "fiber" : 7.0,
+    "carbs" : 26.0,
+    "sodium" : 413.0,
+    "protein" : 24.0
+  },
+  "logDate" : "2017-05-01",
+  "favorite" : false
+},{
+  "logId" : 10825205813,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Lunch Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 510,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 3
+  },
+  "nutritionalValues" : {
+    "calories" : 510,
+    "fat" : 28.0,
+    "fiber" : 4.0,
+    "carbs" : 53.0,
+    "sodium" : 201.0,
+    "protein" : 20.0
+  },
+  "logDate" : "2017-05-01",
+  "favorite" : false
+},{
+  "logId" : 10822081610,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Breakfast Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 171,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 1
+  },
+  "nutritionalValues" : {
+    "calories" : 171,
+    "fat" : 12.0,
+    "fiber" : 0.0,
+    "carbs" : 2.0,
+    "sodium" : 189.0,
+    "protein" : 14.0
+  },
+  "logDate" : "2017-05-01",
+  "favorite" : false
+},{
+  "logId" : 10815259013,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Lunch Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 720,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 3
+  },
+  "nutritionalValues" : {
+    "calories" : 720,
+    "fat" : 29.0,
+    "fiber" : 7.0,
+    "carbs" : 74.0,
+    "sodium" : 1127.0,
+    "protein" : 42.0
+  },
+  "logDate" : "2017-04-30",
+  "favorite" : false
+},{
+  "logId" : 10813663211,
+  "loggedFood" : {
+    "foodId" : 0,
+    "name" : "Breakfast Summary",
+    "brand" : "MyFitnessPal",
+    "accessLevel" : "PRIVATE",
+    "units" : [201],
+    "calories" : 510,
+    "amount" : 1.0,
+    "unit" : {
+      "id" : 201,
+      "name" : "meal",
+      "plural" : "meals"
+    },
+    "mealTypeId" : 1
+  },
+  "nutritionalValues" : {
+    "calories" : 510,
+    "fat" : 25.0,
+    "fiber" : 15.0,
+    "carbs" : 47.0,
+    "sodium" : 457.0,
+    "protein" : 29.0
+  },
+  "logDate" : "2017-04-30",
+  "favorite" : false
+},{
   "logId" : 10742909145,
   "loggedFood" : {
     "foodId" : 0,
@@ -2103,599 +2697,5 @@
     "protein" : 21.0
   },
   "logDate" : "2017-02-17",
-  "favorite" : false
-},{
-  "logId" : 10038728028,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Breakfast Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 278,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 1
-  },
-  "nutritionalValues" : {
-    "calories" : 278,
-    "fat" : 11.0,
-    "fiber" : 3.0,
-    "carbs" : 29.0,
-    "sodium" : 327.0,
-    "protein" : 14.0
-  },
-  "logDate" : "2017-02-17",
-  "favorite" : false
-},{
-  "logId" : 9990812256,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Lunch Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 483,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 3
-  },
-  "nutritionalValues" : {
-    "calories" : 483,
-    "fat" : 21.0,
-    "fiber" : 16.0,
-    "carbs" : 46.0,
-    "sodium" : 1835.0,
-    "protein" : 23.0
-  },
-  "logDate" : "2017-02-13",
-  "favorite" : false
-},{
-  "logId" : 9989305775,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Breakfast Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 258,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 1
-  },
-  "nutritionalValues" : {
-    "calories" : 258,
-    "fat" : 11.0,
-    "fiber" : 5.0,
-    "carbs" : 28.0,
-    "sodium" : 327.0,
-    "protein" : 13.0
-  },
-  "logDate" : "2017-02-13",
-  "favorite" : false
-},{
-  "logId" : 9984437596,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Snacks Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 190,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 7
-  },
-  "nutritionalValues" : {
-    "calories" : 190,
-    "fat" : 0.0,
-    "fiber" : 0.0,
-    "carbs" : 47.0,
-    "sodium" : 10.0,
-    "protein" : 0.0
-  },
-  "logDate" : "2017-02-12",
-  "favorite" : false
-},{
-  "logId" : 9988466732,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Dinner Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 1000,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 5
-  },
-  "nutritionalValues" : {
-    "calories" : 1000,
-    "fat" : 0.0,
-    "fiber" : 0.0,
-    "carbs" : 0.0,
-    "sodium" : 0.0,
-    "protein" : 0.0
-  },
-  "logDate" : "2017-02-12",
-  "favorite" : false
-},{
-  "logId" : 9984098861,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Lunch Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 500,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 3
-  },
-  "nutritionalValues" : {
-    "calories" : 500,
-    "fat" : 0.0,
-    "fiber" : 0.0,
-    "carbs" : 0.0,
-    "sodium" : 0.0,
-    "protein" : 0.0
-  },
-  "logDate" : "2017-02-12",
-  "favorite" : false
-},{
-  "logId" : 9984383557,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Breakfast Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 365,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 1
-  },
-  "nutritionalValues" : {
-    "calories" : 365,
-    "fat" : 20.0,
-    "fiber" : 6.0,
-    "carbs" : 39.0,
-    "sodium" : 470.0,
-    "protein" : 13.0
-  },
-  "logDate" : "2017-02-12",
-  "favorite" : false
-},{
-  "logId" : 9976633762,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Snacks Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 380,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 7
-  },
-  "nutritionalValues" : {
-    "calories" : 380,
-    "fat" : 0.0,
-    "fiber" : 0.0,
-    "carbs" : 0.0,
-    "sodium" : 0.0,
-    "protein" : 0.0
-  },
-  "logDate" : "2017-02-11",
-  "favorite" : false
-},{
-  "logId" : 9976149324,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Lunch Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 530,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 3
-  },
-  "nutritionalValues" : {
-    "calories" : 530,
-    "fat" : 0.0,
-    "fiber" : 0.0,
-    "carbs" : 0.0,
-    "sodium" : 0.0,
-    "protein" : 0.0
-  },
-  "logDate" : "2017-02-11",
-  "favorite" : false
-},{
-  "logId" : 9976779956,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Breakfast Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 330,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 1
-  },
-  "nutritionalValues" : {
-    "calories" : 330,
-    "fat" : 18.0,
-    "fiber" : 6.0,
-    "carbs" : 34.0,
-    "sodium" : 440.0,
-    "protein" : 13.0
-  },
-  "logDate" : "2017-02-11",
-  "favorite" : false
-},{
-  "logId" : 9970327395,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Snacks Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 320,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 7
-  },
-  "nutritionalValues" : {
-    "calories" : 320,
-    "fat" : 19.0,
-    "fiber" : 1.0,
-    "carbs" : 29.0,
-    "sodium" : 350.0,
-    "protein" : 10.0
-  },
-  "logDate" : "2017-02-10",
-  "favorite" : false
-},{
-  "logId" : 9964633324,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Dinner Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 436,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 5
-  },
-  "nutritionalValues" : {
-    "calories" : 436,
-    "fat" : 11.0,
-    "fiber" : 0.0,
-    "carbs" : 43.0,
-    "sodium" : 0.0,
-    "protein" : 39.0
-  },
-  "logDate" : "2017-02-10",
-  "favorite" : false
-},{
-  "logId" : 9962612569,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Lunch Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 509,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 3
-  },
-  "nutritionalValues" : {
-    "calories" : 509,
-    "fat" : 13.0,
-    "fiber" : 5.0,
-    "carbs" : 73.0,
-    "sodium" : 1611.0,
-    "protein" : 37.0
-  },
-  "logDate" : "2017-02-10",
-  "favorite" : false
-},{
-  "logId" : 9967154869,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Breakfast Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 618,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 1
-  },
-  "nutritionalValues" : {
-    "calories" : 618,
-    "fat" : 2.0,
-    "fiber" : 3.0,
-    "carbs" : 150.0,
-    "sodium" : 156.0,
-    "protein" : 1.0
-  },
-  "logDate" : "2017-02-10",
-  "favorite" : false
-},{
-  "logId" : 9957165036,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Dinner Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 726,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 5
-  },
-  "nutritionalValues" : {
-    "calories" : 726,
-    "fat" : 25.0,
-    "fiber" : 4.0,
-    "carbs" : 90.0,
-    "sodium" : 1458.0,
-    "protein" : 33.0
-  },
-  "logDate" : "2017-02-09",
-  "favorite" : false
-},{
-  "logId" : 9951661916,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Lunch Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 400,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 3
-  },
-  "nutritionalValues" : {
-    "calories" : 400,
-    "fat" : 12.0,
-    "fiber" : 2.0,
-    "carbs" : 61.0,
-    "sodium" : 620.0,
-    "protein" : 11.0
-  },
-  "logDate" : "2017-02-09",
-  "favorite" : false
-},{
-  "logId" : 9953012521,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Breakfast Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 348,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 1
-  },
-  "nutritionalValues" : {
-    "calories" : 348,
-    "fat" : 0.0,
-    "fiber" : 2.0,
-    "carbs" : 159.0,
-    "sodium" : 156.0,
-    "protein" : 1.0
-  },
-  "logDate" : "2017-02-09",
-  "favorite" : false
-},{
-  "logId" : 9948124165,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Snacks Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 1500,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 7
-  },
-  "nutritionalValues" : {
-    "calories" : 1500,
-    "fat" : 0.0,
-    "fiber" : 0.0,
-    "carbs" : 0.0,
-    "sodium" : 0.0,
-    "protein" : 0.0
-  },
-  "logDate" : "2017-02-08",
-  "favorite" : false
-},{
-  "logId" : 9937255961,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Lunch Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 736,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 3
-  },
-  "nutritionalValues" : {
-    "calories" : 736,
-    "fat" : 35.0,
-    "fiber" : 8.0,
-    "carbs" : 91.0,
-    "sodium" : 1244.0,
-    "protein" : 32.0
-  },
-  "logDate" : "2017-02-08",
-  "favorite" : false
-},{
-  "logId" : 9937194077,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Breakfast Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 293,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 1
-  },
-  "nutritionalValues" : {
-    "calories" : 293,
-    "fat" : 2.0,
-    "fiber" : 3.0,
-    "carbs" : 142.0,
-    "sodium" : 156.0,
-    "protein" : 1.0
-  },
-  "logDate" : "2017-02-08",
-  "favorite" : false
-},{
-  "logId" : 9929279580,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Snacks Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 440,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 7
-  },
-  "nutritionalValues" : {
-    "calories" : 440,
-    "fat" : 20.0,
-    "fiber" : 3.0,
-    "carbs" : 63.0,
-    "sodium" : 350.0,
-    "protein" : 4.0
-  },
-  "logDate" : "2017-02-07",
-  "favorite" : false
-},{
-  "logId" : 9928078890,
-  "loggedFood" : {
-    "foodId" : 0,
-    "name" : "Dinner Summary",
-    "brand" : "MyFitnessPal",
-    "accessLevel" : "PRIVATE",
-    "units" : [201],
-    "calories" : 696,
-    "amount" : 1.0,
-    "unit" : {
-      "id" : 201,
-      "name" : "meal",
-      "plural" : "meals"
-    },
-    "mealTypeId" : 5
-  },
-  "nutritionalValues" : {
-    "calories" : 696,
-    "fat" : 43.0,
-    "fiber" : 3.0,
-    "carbs" : 33.0,
-    "sodium" : 617.0,
-    "protein" : 49.0
-  },
-  "logDate" : "2017-02-07",
   "favorite" : false
 }]
