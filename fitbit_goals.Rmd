@@ -1,0 +1,45 @@
+---
+title: "Running Goals"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    toc_depth: 5
+---
+
+### Running Goals as of 6/14
+
+#### Next 5k
+
+- Run a sub-31:45 minute 5k (10:15) for my next 5k race (62 seconds faster than PR), by end of 2019.
+  
+#### Next 10k
+
+- Run a sub-66 minute 10k (10:35) for my next 10k race (6 minutes faster than PR), by end of 2019. 
+
+#### Next Half-Marathon
+
+- Run a sub-2:25 (11:05) half marathon next half (18 minutes faster than PR), during the fall of 2019. 
+
+#### Finish a Marathon!
+- In 2020
+
+#### Try a triathalon
+- In 2020
+
+
+### Current Training Targets as of 6/14
+
+- 9:30 mile best
+
+- 10:15 5k best
+
+- 10:35 10k best
+
+- 11:00 tempo
+
+- 11:05 half marathon pace
+
+- 11:25 marathon pace
+
+- 12:10 recovery day pace

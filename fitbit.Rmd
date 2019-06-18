@@ -1,0 +1,204 @@
+---
+title: "Analyzing My Fitbit Data"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    toc_depth: 5
+---
+   
+```{r,message=FALSE, include = FALSE}
+library(tidyverse) 
+library(lubridate)
+
+knitr::opts_chunk$set(echo =FALSE)
+knitr::opts_chunk$set(message =FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+
+```
+
+```{r, message = FALSE}
+exercise <- read_csv("./portfolio/fitbit/clean/exercise.csv") 
+```
+
+# Background
+
+**TL;DR: I'm new to running as of May 2018 and still very slow, but learning to love the sport!**
+
+For most of my life, working out has been a very sporadic activity for me. I dabbled in soccer and tae kwon do (martial arts) as a kid, and danced in college, but never found a solid workout routine in college. I bought a Fitbit in 2016 to help inspire me to be more consistent in training but the device kind of sat on my arm, unnoticed for a few years. 
+
+In May of 2018, I took a summer internship in Chicago and began to run to avoid the gym. I registered for Chicago's 2018 [Rock 'n' Roll 10k](https://www.runrocknroll.com/Events/Chicago), picking the 10k distance because it was just long enough to challenge me and kick my butt into action, without completely overwhelming me. When I signed up, I had never run longer than 5 minutes without a walk break, so my training was very uninformed and haphazard. 
+
+I spent most of my training runs running at my maximum pace, and attempting to run slightly longer than the day before, and left each workout sore, exhausted, and miserable, and felt I wasn't really making any large improvements in my ability to handle the paces i was trying to handle, or in running longer distances. I never made it past 4.5 miles in my training runs, which freaked me out quite a bit, and made me worried I wouldn't reach my goal of finishing a 10k. I downloaded Matt Fitzgerald's book, [80/20 Running](https://mattfitzgerald.org/books/), because the tagline "race faster by training slower" seemed like a complete 180 from what my self-prescribed training plan was. 
+
+It was after reading that book that I decided to stop comparing my pace to my friend's paces in my runs, and stopped trying to beat my fastest pace every single time I went for a run. I slowed down most of my runs (with the exception of the occasional, more moanagable speed interval workout here and there), and started to enjoy running a lot more. 
+
+The 10k was still brutally hard for me, but by learning to manage my pace a bit better, and reading about the sport from some of the experts, I finished my 10k without stopping to run, and was proud of my time, even though it's a very unimpressive time for most runners. Since then, I've run a few more races (including a half-marathon in April 2019!), have continued working out consistently, and keep setting and reaching new goals for myself. 
+
+It's so cool to think back about how I went from being able to run 5 minutes at a time, and absolutely hating running, to completing a half-marathon a year later, and learning to enjoy the sport. There's not a whole lot of information out there about slow runners or novices, and how they've progressed as runners, so when I found out Fitbit FINALLY made a way for users to download all their data as a .csv file, I was excited to dig into my data not only for my own benefit, but hopefully to also share with other slow, novice runners out there!
+
+## About my fitbit data
+
+Below are a few quick visualizations I made from my own personal data collected by my [Charge 2 Fitbit](https://help.fitbit.com/articles/en_US/Help_article/2081/?l=en_US&p=charge_2&fs=Search&pn=1), and downloaded as a csv file. For any other Fitbit-ers out there who want to analyze their own data in R or another program, Fitbit just changed how much of your own data you can access in March of 2019 (before, they let you download very basic data, one month at a time, but now you can request all data every collected by your Fitbit, as often as once every 24 hours!). It's super easy to get your hands on your Fitbit data now that these changes have been made, and a tutorial for downloading your .zip file can be found [here](fitbit_download_tutorial.html). For those interested, the code I used to generate the plots below can be found [here](fitbit_code.html). 
+
+# Workouts
+
+### Frequency of Workouts by Type
+
+This plot shows each workout I've done since May 2018, categorized by day of week, week of year, and whether the workout was a bike workout (including cycling and outdoor), running workout (including treadmill and outdoor runs), swimming, yoga, or something else (weight lifting, strength training, hiking, etc.). Each tile is colored according to my average heart rate during the workout, where purple shows a low heart rate, yellow shows a high intensity, and grey indicates workouts that are missing heart rate data, such as when my tracker was dead, or I took it off (in the case of my swim workouts). 
+
+```{r}
+exercise %>% 
+  filter(activity_name != "Walk", date_time >= "2018-05-01") %>% 
+  mutate(day = wday(date_time, label = TRUE), week = week(date_time), year = year(date_time)) %>%
+  mutate(activity = ifelse(str_detect(activity_name, "Run") == TRUE | activity_name == "Treadmill", "Run", "Other")) %>%
+  # comment out strength training
+  #mutate(activity = ifelse(activity_name %in% c("Calisthenics", "Weights"), "Strength", activity)) %>% 
+  mutate(activity = ifelse(activity_name %in% c("Bike", "Yoga", "Swim"), activity_name, activity)) %>% 
+  ggplot(aes(x = day, y = week, fill = average_heart_rate)) +
+  geom_tile() + 
+  facet_grid(rows = vars(year), cols = vars(activity), scale = "free_y", space = "free_y") + 
+  scale_y_reverse() + 
+  theme_classic() + 
+  theme(legend.position = "bottom", axis.text.x = element_text(angle = 90, hjust = 1)) +
+  viridis::scale_fill_viridis() + 
+  labs(fill = "Average Heart Rate")
+```
+
+# Running
+
+### Official Race Paces and Finish Times
+
+I record official race data manually in an excel file to keep all of my race data from various race sites in one place. I use this instead of my fitbit data, since offical race times and paces can vary quite a bit from what my Fitbit tracker records. 
+
+This plot shows my official pace time, organized by the distance of the race. The Race Number shows the order in which I ran these races, starting with my first official race (the Rock 'n' Roll 10k) as #1. The table below the plot shows the raw data. 
+
+```{r}
+read_csv("./portfolio/fitbit/clean/race.csv") %>% 
+  mutate(race_number = as.character(1:nrow(.))) %>% 
+  mutate(race_pace = hms(race_pace)) %>% 
+  mutate(race_pace = period_to_seconds(race_pace)/60) %>% 
+  mutate(race_distance = as.character(race_distance)) %>% 
+  mutate(race_distance = as_factor(race_distance, levels = c("3.1", "6.2", "13.1"))) %>% 
+  ggplot(aes(x = race_number, y = race_pace, fill = race_distance)) +
+  geom_bar(stat = "identity") + 
+  facet_grid(cols = vars(race_distance), space = "free_x", scale = "free_x") + 
+  theme_classic() + 
+  labs(y = "Pace", x = "Race Number", fill = "Distance (miles)") +
+  viridis::scale_fill_viridis(discrete = TRUE, end = .9)
+```
+
+```{r}
+read_csv("./portfolio/fitbit/clean/race.csv") %>% 
+  mutate(race_finish_ms = as.character(race_finish_ms)) %>% 
+  mutate(race_number = as.character(1:nrow(.))) %>% 
+  mutate(race_pace = hms(race_pace)) %>% 
+  mutate(race_pace = period_to_seconds(race_pace)/60) %>% 
+  mutate(race_distance = as.character(race_distance)) %>% 
+  mutate(race_distance = as_factor(race_distance, levels = c("3.1", "6.2", "13.1"))) %>% 
+  mutate(race_pace = round(race_pace, 2)) %>% 
+  select(race_number, race_name, date_time, race_distance, race_finish_ms, race_pace) %>% 
+  knitr::kable()
+```
+
+
+### Running Intensity
+
+I try to follow the guiding principles of the 80/20 Running book, and this plot is meant to show me qualitatively how close I am to reaching the goals set forth by the book. In the book, Matt lays out the guiding principles for defining your own personal low, moderate, and high intenensity heart rate zones. I took my heart rate during each minute I spent working out, assigned it to the appropriate zone, and then calculated what percentage of my running time each week was spent in each heart rate zone (non-running workouts are exluded from this chart). My workout goal is  to have 80% of my running at the low/moderate intensity, and 20% of my running at high intensity.
+
+```{r, message = FALSE}
+hr <- read_csv("./portfolio/fitbit/clean/hr_minute.csv") %>%
+  select(date_time, zone, zone_intensity) %>% 
+  mutate(date_time = floor_date(date_time, unit = "week")) %>% 
+  filter(zone != "Zone 0") %>% 
+  separate(zone_intensity, into = c("zone_intensity", "del")) %>% 
+  mutate(zone_intensity = fct_relevel(zone_intensity, "low", "moderate", "high")) %>% 
+  group_by(date_time, zone, zone_intensity) %>% 
+  select(-del) %>% 
+  tally() 
+```
+
+
+```{r}
+hr %>%
+  filter(date_time >= "2018-05-01") %>% 
+  group_by(date_time) %>% 
+  mutate(minutes = n/sum(n)*100) %>% 
+  ggplot(aes(x = date_time, y = minutes, fill = zone_intensity)) +
+  geom_bar(stat = "identity") +
+  theme_minimal() + 
+  labs(x = "", y = "Percent", title = "Percent of Running Minutes Spent at Each Intensity", fill = "Zone Intensity") +
+  viridis::scale_fill_viridis(discrete = TRUE, end = .9) +
+  scale_y_continuous(breaks = c(0, 20, 40, 60, 80, 100)) +
+  geom_hline(yintercept = 20, color = "white") +
+  coord_flip()
+```
+
+```{r}
+ggsave("./portfolio/fitbit/fitbit_image.png")
+```
+
+
+In the last 30 days, **`r hr %>% filter(date_time >= Sys.Date() - 30) %>% group_by(date_time) %>% mutate(minutes = n/sum(n)*100) %>% filter(zone_intensity == "high") %>% group_by(date_time, zone_intensity) %>% summarise(n = sum(n)) %>% ungroup() %>% summarise(n = mean(n)) %>% mutate(n = round(n, 0))`%** of my running minutes have been spent at high intensity zones.
+
+### Changes in Running Pace Since May, 2018
+
+This plot is meant to help me visualize how my pace has changed since I started training for my first 10k. I split this plot based on the length of the run, since I know I'll run longer runs at a slower pace than some of my shorter runs, which tend to be either speed or recovery runs. I also colored the points in this plot according to my heart rate, so that if my pace is staying similar but my heart rate is decreasing, that may also be a sign that I'm improving. The trend lines in each subset show a simple linear regression of how my pace changes with each additional run. 
+
+Note: I decided not to scale the x-axis by time, but rather show equal distance between each run. 
+
+```{r, message = FALSE}
+exercise <- read_csv("./portfolio/fitbit/clean/exercise.csv") 
+
+ex <- exercise %>% 
+  mutate(distance_category = ifelse(distance <= 3.2, "5k or Less", 
+                                    ifelse(distance > 3.2 & distance <= 6.4, "Between 5k and 10k", 
+                                          "Greater than 10k"))) %>% 
+  mutate(distance_category = as_factor(distance_category)) %>% 
+  mutate(distance_category = relevel(distance_category, "5k or Less", "Between 5k and 10k", "Greater than 10k")) %>% 
+  filter(activity_name == "Run", date_time >= "2018-05-01", !is.na(pace), speed >= 3) %>% 
+  mutate(run_number = 1:nrow(.)) %>% 
+  mutate(speed = 1/(speed/60)) %>% 
+  nest() %>% 
+  mutate(models = map(data, ~lm(speed ~ run_number, data = ., subset = (distance_category =="Greater than 10k")))) %>% 
+  mutate(models = map(models, ~broom::tidy(.)))
+  
+  ex %>% 
+  select(data) %>% 
+  unnest() %>% 
+    ggplot(., aes(x = run_number, y = speed)) +
+    geom_point(size=4, aes(color = average_heart_rate)) + 
+    theme_classic() + 
+    facet_grid(rows = vars(distance_category)) +
+    geom_smooth(method = "lm", se = FALSE, color = "black") + 
+    viridis::scale_color_viridis() +
+    labs(title = "Pace Over Time since May 1, 2018", x = "Run", y = "Minutes per Mile", color = "Average Heart Rate")
+```
+
+Based of these linear regression lines, had I attempted a run over 10k when I had first started to seriously run, I'd estimate that my pace would've been around **`r ex %>% unnest(models) %>% filter(term == "(Intercept)") %>% select(estimate) %>%  mutate(estimate = floor(estimate))` minutes and `r ex %>% unnest(models) %>% filter(term == "(Intercept)") %>% mutate(estimate = round(estimate, 2)) %>% separate(estimate, into = c("minutes", "seconds"), by = "\\.") %>% mutate(seconds = as.numeric(seconds)/100*60)  %>% mutate(seconds = round(seconds, 0)) %>% select(seconds)` seconds**. With each long run, my pace is estimated to **`r ex %>% unnest(models) %>% filter(term == "run_number") %>% mutate(estimate = ifelse(estimate >= 0, "increase", "decrease")) %>% select(estimate)` by `r ex %>% unnest(models) %>% filter(term == "run_number") %>% mutate(estimate = floor((estimate %% 1)*10)) %>% mutate(estimate = estimate/100*60) %>% mutate(estimate = round(estimate, 0)) %>% select(estimate)` seconds**.
+
+#### Results of Linear Regression 
+
+Results of a simple linear regression model between pace and run number for each distance category. 
+
+```{r}
+exercise %>% 
+  mutate(distance_category = ifelse(distance <= 3.2, "5k or Less", 
+                                    ifelse(distance > 3.2 & distance <= 6.4, "Between 5k and 10k", 
+                                          "Greater than 10k"))) %>% 
+  mutate(distance_category = as_factor(distance_category)) %>% 
+  mutate(distance_category = relevel(distance_category, "5k or Less", "Between 5k and 10k", "Greater than 10k")) %>% 
+  filter(activity_name == "Run", date_time >= "2018-05-01", !is.na(pace), speed >= 3) %>% 
+  mutate(run_number = 1:nrow(.)) %>% 
+  mutate(speed = 1/(speed/60)) %>% 
+  group_by(distance_category) %>% 
+  nest() %>% 
+  mutate(models = map(data, ~lm(speed ~ run_number, data = .))) %>% 
+  mutate(models = map(models, ~broom::tidy(.))) %>% 
+  select(-data) %>% 
+  unnest() %>% 
+  filter(term != "(Intercept)") %>% 
+  knitr::kable()
+```
+
+Hope to use this to work towards my next running [goal](fitbit_goals.html)!

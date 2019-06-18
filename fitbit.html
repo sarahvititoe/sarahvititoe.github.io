@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Analyzing My Fitbit Data</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 54px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+
+.section h2 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h3 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h4 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h5 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h6 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4,h5",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Sarah Vititoe</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="cv.html">CV/Resume</a>
+</li>
+<li>
+  <a href="projects.html">Projects</a>
+</li>
+<li>
+  <a href="mailto:&lt;sarahvititoe23@gmail.com&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/sarahvititoe/">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/sarahvititoe/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Analyzing My Fitbit Data</h1>
+
+</div>
+
+
+<div id="background" class="section level1">
+<h1>Background</h1>
+<p><strong>TL;DR: I’m new to running as of May 2018 and still very slow, but learning to love the sport!</strong></p>
+<p>For most of my life, working out has been a very sporadic activity for me. I dabbled in soccer and tae kwon do (martial arts) as a kid, and danced in college, but never found a solid workout routine in college. I bought a Fitbit in 2016 to help inspire me to be more consistent in training but the device kind of sat on my arm, unnoticed for a few years.</p>
+<p>In May of 2018, I took a summer internship in Chicago and began to run to avoid the gym. I registered for Chicago’s 2018 <a href="https://www.runrocknroll.com/Events/Chicago">Rock ‘n’ Roll 10k</a>, picking the 10k distance because it was just long enough to challenge me and kick my butt into action, without completely overwhelming me. When I signed up, I had never run longer than 5 minutes without a walk break, so my training was very uninformed and haphazard.</p>
+<p>I spent most of my training runs running at my maximum pace, and attempting to run slightly longer than the day before, and left each workout sore, exhausted, and miserable, and felt I wasn’t really making any large improvements in my ability to handle the paces i was trying to handle, or in running longer distances. I never made it past 4.5 miles in my training runs, which freaked me out quite a bit, and made me worried I wouldn’t reach my goal of finishing a 10k. I downloaded Matt Fitzgerald’s book, <a href="https://mattfitzgerald.org/books/">80/20 Running</a>, because the tagline “race faster by training slower” seemed like a complete 180 from what my self-prescribed training plan was.</p>
+<p>It was after reading that book that I decided to stop comparing my pace to my friend’s paces in my runs, and stopped trying to beat my fastest pace every single time I went for a run. I slowed down most of my runs (with the exception of the occasional, more moanagable speed interval workout here and there), and started to enjoy running a lot more.</p>
+<p>The 10k was still brutally hard for me, but by learning to manage my pace a bit better, and reading about the sport from some of the experts, I finished my 10k without stopping to run, and was proud of my time, even though it’s a very unimpressive time for most runners. Since then, I’ve run a few more races (including a half-marathon in April 2019!), have continued working out consistently, and keep setting and reaching new goals for myself.</p>
+<p>It’s so cool to think back about how I went from being able to run 5 minutes at a time, and absolutely hating running, to completing a half-marathon a year later, and learning to enjoy the sport. There’s not a whole lot of information out there about slow runners or novices, and how they’ve progressed as runners, so when I found out Fitbit FINALLY made a way for users to download all their data as a .csv file, I was excited to dig into my data not only for my own benefit, but hopefully to also share with other slow, novice runners out there!</p>
+<div id="about-my-fitbit-data" class="section level2">
+<h2>About my fitbit data</h2>
+<p>Below are a few quick visualizations I made from my own personal data collected by my <a href="https://help.fitbit.com/articles/en_US/Help_article/2081/?l=en_US&amp;p=charge_2&amp;fs=Search&amp;pn=1">Charge 2 Fitbit</a>, and downloaded as a csv file. For any other Fitbit-ers out there who want to analyze their own data in R or another program, Fitbit just changed how much of your own data you can access in March of 2019 (before, they let you download very basic data, one month at a time, but now you can request all data every collected by your Fitbit, as often as once every 24 hours!). It’s super easy to get your hands on your Fitbit data now that these changes have been made, and a tutorial for downloading your .zip file can be found <a href="fitbit_download_tutorial.html">here</a>. For those interested, the code I used to generate the plots below can be found <a href="fitbit_code.html">here</a>.</p>
+</div>
+</div>
+<div id="workouts" class="section level1">
+<h1>Workouts</h1>
+<div id="frequency-of-workouts-by-type" class="section level3">
+<h3>Frequency of Workouts by Type</h3>
+<p>This plot shows each workout I’ve done since May 2018, categorized by day of week, week of year, and whether the workout was a bike workout (including cycling and outdoor), running workout (including treadmill and outdoor runs), swimming, yoga, or something else (weight lifting, strength training, hiking, etc.). Each tile is colored according to my average heart rate during the workout, where purple shows a low heart rate, yellow shows a high intensity, and grey indicates workouts that are missing heart rate data, such as when my tracker was dead, or I took it off (in the case of my swim workouts).</p>
+<p><img src="fitbit_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+</div>
+<div id="running" class="section level1">
+<h1>Running</h1>
+<div id="official-race-paces-and-finish-times" class="section level3">
+<h3>Official Race Paces and Finish Times</h3>
+<p>I record official race data manually in an excel file to keep all of my race data from various race sites in one place. I use this instead of my fitbit data, since offical race times and paces can vary quite a bit from what my Fitbit tracker records.</p>
+<p>This plot shows my official pace time, organized by the distance of the race. The Race Number shows the order in which I ran these races, starting with my first official race (the Rock ‘n’ Roll 10k) as #1. The table below the plot shows the raw data.</p>
+<p><img src="fitbit_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">race_number</th>
+<th align="left">race_name</th>
+<th align="left">date_time</th>
+<th align="left">race_distance</th>
+<th align="left">race_finish_ms</th>
+<th align="right">race_pace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">Humana Rock ‘N’ Roll Chicago 10k</td>
+<td align="left">2018-07-22</td>
+<td align="left">6.2</td>
+<td align="left">01:15:05</td>
+<td align="right">12.08</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">NYCRuns Govenors Isalnd 10k</td>
+<td align="left">2018-09-29</td>
+<td align="left">6.2</td>
+<td align="left">01:12:04</td>
+<td align="right">11.62</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">Dayton Turkey Trot 5k</td>
+<td align="left">2018-11-25</td>
+<td align="left">3.1</td>
+<td align="left">00:32:47</td>
+<td align="right">10.55</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">Cupid’s Chase 5K Manhattan</td>
+<td align="left">2019-02-09</td>
+<td align="left">3.1</td>
+<td align="left">00:34:23</td>
+<td align="right">11.07</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">Shape Women’s Half Marathon</td>
+<td align="left">2019-04-14</td>
+<td align="left">13.1</td>
+<td align="left">02:43:09</td>
+<td align="right">12.45</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="running-intensity" class="section level3">
+<h3>Running Intensity</h3>
+<p>I try to follow the guiding principles of the 80/20 Running book, and this plot is meant to show me qualitatively how close I am to reaching the goals set forth by the book. In the book, Matt lays out the guiding principles for defining your own personal low, moderate, and high intenensity heart rate zones. I took my heart rate during each minute I spent working out, assigned it to the appropriate zone, and then calculated what percentage of my running time each week was spent in each heart rate zone (non-running workouts are exluded from this chart). My workout goal is to have 80% of my running at the low/moderate intensity, and 20% of my running at high intensity.</p>
+<p><img src="fitbit_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>In the last 30 days, <strong>34%</strong> of my running minutes have been spent at high intensity zones.</p>
+</div>
+<div id="changes-in-running-pace-since-may-2018" class="section level3">
+<h3>Changes in Running Pace Since May, 2018</h3>
+<p>This plot is meant to help me visualize how my pace has changed since I started training for my first 10k. I split this plot based on the length of the run, since I know I’ll run longer runs at a slower pace than some of my shorter runs, which tend to be either speed or recovery runs. I also colored the points in this plot according to my heart rate, so that if my pace is staying similar but my heart rate is decreasing, that may also be a sign that I’m improving. The trend lines in each subset show a simple linear regression of how my pace changes with each additional run.</p>
+<p>Note: I decided not to scale the x-axis by time, but rather show equal distance between each run.</p>
+<p><img src="fitbit_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Based of these linear regression lines, had I attempted a run over 10k when I had first started to seriously run, I’d estimate that my pace would’ve been around <strong>16 minutes and 43 seconds</strong>. With each long run, my pace is estimated to <strong>decrease by 5 seconds</strong>.</p>
+<div id="results-of-linear-regression" class="section level4">
+<h4>Results of Linear Regression</h4>
+<p>Results of a simple linear regression model between pace and run number for each distance category.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">distance_category</th>
+<th align="left">term</th>
+<th align="right">estimate</th>
+<th align="right">std.error</th>
+<th align="right">statistic</th>
+<th align="right">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">5k or Less</td>
+<td align="left">run_number</td>
+<td align="right">0.0193597</td>
+<td align="right">0.0109281</td>
+<td align="right">1.7715446</td>
+<td align="right">0.0851776</td>
+</tr>
+<tr class="even">
+<td align="left">Between 5k and 10k</td>
+<td align="left">run_number</td>
+<td align="right">0.0135830</td>
+<td align="right">0.0292923</td>
+<td align="right">0.4637069</td>
+<td align="right">0.6518986</td>
+</tr>
+<tr class="odd">
+<td align="left">Greater than 10k</td>
+<td align="left">run_number</td>
+<td align="right">-0.0939101</td>
+<td align="right">0.0297820</td>
+<td align="right">-3.1532502</td>
+<td align="right">0.0252863</td>
+</tr>
+</tbody>
+</table>
+<p>Hope to use this to work towards my next running <a href="fitbit_goals.html">goal</a>!</p>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

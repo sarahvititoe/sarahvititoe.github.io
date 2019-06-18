@@ -25,10 +25,10 @@ I'm an **epidemiologist** and **data enthusiast** currently working as a data ma
 
 I love working with data in the healthcare field, but I'm most passionate about projects involving **observational studies**, **cancer** and **chronic disease** research, and **patient-centered** inniatives. I work mostly in R, but I'm also proficient in SQL and SAS.
 
-I graduate with my **Master of Public Health in epidemiology** from [Columbia University](https://www.mailman.columbia.edu/academics/departments/epidemiology) in May of 2019, and have a **Bachelor of Science degree in microbiology and cell sciences** from the [University of Florida](https://catalog.ufl.edu/UGRD/colleges-schools/UGLAS/MCY_BS/) (Go Gators!). 
+I have a **Master of Public Health in epidemiology** from [Columbia University](https://www.mailman.columbia.edu/academics/departments/epidemiology) in May of 2019, and have a **Bachelor of Science degree in microbiology and cell sciences** from the [University of Florida](https://catalog.ufl.edu/UGRD/colleges-schools/UGLAS/MCY_BS/) (Go Gators!). 
 
 ### About Me
-- I'm a novice runner, and just ran my first [half marathon](https://www.nyrr.org/races/shapewomen39shalfmarathon) in April 2019!
+- I'm a [novice runner](fitbit.html), and just ran my first half marathon in April 2019!
 - I have a certification in beer from the [Cicerone Certification Program](https://www.cicerone.org/)!
 - I love to read, and I'm always on the hunt for my next book. Check out my [to-be-read list on Goodreads](https://www.goodreads.com/user/show/65756239-sarah-vititoe), and send some suggestions my way! My current read is *`r gr_title`*!
 

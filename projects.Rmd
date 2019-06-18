@@ -11,7 +11,6 @@ output:
 
 *Projects are categorized by topic, and may be listed more than once if they are relevant to multiple topics. Click on the project title to learn more.*
 
-
 ### Microsoft Access/SQL
 
 - An [Access Database for a Mock Research Study](portfolio_db.html): Final Project for Relational Databases and SQL Programming for Research and Data Science. 
@@ -27,4 +26,8 @@ output:
 - [My #TidyTuesday Projects](tidy_tuesday.html): A collection of mini-projects completed as part of the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) initiative by the R for Data Science community. These are just for fun, and something I do to practice my skills!
 
 <img src="portfolio/tidy tuesday/saved/05_09_2019.png" style="width:33%">
+
+- [Visualizations of my Charge 2 Fitbit Data](fitbit.html): A few quick analyses and visualizations I made of my personal fitbit data to help me assess my progress as a runner!
+
+<img src="portfolio/fitbit/fitbit_image.png", style="width:33%">
 
