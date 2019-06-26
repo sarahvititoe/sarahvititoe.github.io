@@ -2,6 +2,8 @@
 title: "Hi, I'm Sarah!"
 ---
 
+<img src="images/profile_index.png" align = "right" style="width:33%">
+
 ```{r echo = FALSE, message = FALSE, warnings = FALSE}
 library(tidyverse)
 library(rvest)
