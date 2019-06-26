@@ -5,7 +5,7 @@ library(lubridate)
 
 #### Get All 2019 Data ####
 data <- str_c("./portfolio/fitbit/SarahVititoe/user-site-export/", 
-      list.files(path = "./portfolio/fitbit/SarahVititoe/user-site-export/", pattern = "2019")) %>% 
+      list.files(path = "./portfolio/fitbit/SarahVititoe/user-site-export/")) %>% 
   tibble(file_name = .) %>% 
   group_by(file_name) %>% 
   nest 
@@ -90,7 +90,7 @@ get_hr <- function(df){
                                      ifelse(heart_rate >= 153 & heart_rate < 163, "Zone 3", 
                                             ifelse(heart_rate >= 163 & heart_rate < 169, "Zone 4", 
                                                    ifelse(heart_rate >= 169, "Zone 5", NA))))))) %>% 
-  mutate(zone_intensity = ifelse(zone %in% c("Zone 1", "Zone 2"), "low intesity", 
+  mutate(zone_intensity = ifelse(zone %in% c("Zone 1", "Zone 2"), "low intensity", 
                                  ifelse(zone == "Zone 3", "moderate intensity", 
                                         ifelse(zone %in% c("Zone 4", "Zone 5"), "high intensity", "out of zone")))) %>% 
   mutate(zone = as.factor(zone)) %>% 
@@ -165,7 +165,9 @@ get_weight <- function(df){
 #### Create a Race Dataset ####
 race <- read_csv("./portfolio/fitbit/official_race_times.csv") %>% 
   mutate(race_date = as_datetime(dmy(race_date))) %>% 
-  rename(date_time = race_date) 
+  rename(date_time = race_date) %>% 
+  mutate(race_distance = ifelse(race_distance_unit == "kilometers", round(race_distance*0.621371, 1), race_distance)) %>% 
+  select(-race_distance_unit)
 # by day 
 
 #### Create an Exercise Log 
@@ -173,11 +175,19 @@ race_day <- race %>%
   select(date_time) %>% 
   mutate(is_race_day = "Yes")
 
+race %>% 
+  write_csv("./portfolio/fitbit/clean/race.csv")
+
 
 notes <- read_csv("./portfolio/fitbit/run_notes.csv") %>% 
   mutate(workout_date = as_datetime(mdy(workout_date))) %>% 
   select(date_time = workout_date, notes_workout_type = workout_type, 
          notes_training_for = training_for, notes_workout_goals = workout_notes_goals)
+
+
+notes %>% write_csv("./portfolio/fitbit/clean/notes.csv")
+  
+
 # by day 
 
 str_c("./portfolio/fitbit/SarahVititoe/user-site-export/", 
@@ -196,8 +206,6 @@ str_c("./portfolio/fitbit/SarahVititoe/user-site-export/",
     mutate(date_time = floor_date(start_time, "day")) %>% 
     select(date_time, start_time, activity_name, calories, duration, active_duration, steps, distance, 
            distance_unit, speed, pace, elevation_gain, average_heart_rate) %>% 
-    left_join(race_day) %>% 
-    left_join(notes) %>% 
     mutate(duration = seconds_to_period(duration/1000)) %>% 
     mutate(active_duration = seconds_to_period(active_duration/1000)) %>% 
     mutate(pace = seconds_to_period(pace)) %>% 
@@ -276,8 +284,3 @@ get_hr(data) %>%
 get_sleep(data)  %>% 
   write_csv("./portfolio/fitbit/clean/sleep.csv")
   # by day
-
-
-
-
-

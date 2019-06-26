@@ -4,8 +4,8 @@
     "valuesInZones" : {
       "BELOW_DEFAULT_ZONE_1" : 1261.0,
       "IN_DEFAULT_ZONE_3" : 46.0,
-      "IN_DEFAULT_ZONE_1" : 68.0,
-      "IN_DEFAULT_ZONE_2" : 44.0
+      "IN_DEFAULT_ZONE_2" : 44.0,
+      "IN_DEFAULT_ZONE_1" : 68.0
     }
   }
 }]
