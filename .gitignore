@@ -2,6 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+portfolio/fitbit/
 data/
 .json
 *.zip
