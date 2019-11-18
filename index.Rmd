@@ -1,6 +1,5 @@
 ---
 
----
 
 <img src="images/golden_half.jpg" align = "right" style="width:40%">
 
