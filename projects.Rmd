@@ -6,28 +6,37 @@ output:
     toc_float: true
     toc_depth: 5
 ---
- 
-# More Projects Coming Soon!
 
-*Projects are categorized by topic, and may be listed more than once if they are relevant to multiple topics. Click on the project title to learn more.*
+*Projects are categorized by topic. Click on the project title to learn more.*
 
 ### Microsoft Access/SQL
 
-- An [Access Database for a Mock Research Study](portfolio_db.html): Final Project for Relational Databases and SQL Programming for Research and Data Science. 
+#### An [Access Database for a Mock Research Study](portfolio_db.html): Final Project for Relational Databases and SQL Programming for Research and Data Science. 
 
 <img src="portfolio/access/screenshot_entry.png" style="width:33%">
 
 ### R/RStudio
 
-- [Fundraising Data Visualizations for a Non-Profit](portfolio_nonprofit.html) in New York
+#### Samples from Master's Thesis
+**The Role of Gut Microbiota on CpG Island Methylation Phenotype CIMP Colorectal Cancer Tumorigenesis**
+
+##### Example Plot 1
+<img src="portfolio/thesis/Fig02_tumor_methylation.pdf" style="width:100%">
+
+##### Example Plot 2
+<img src="portfolio/thesis/Fig03_otu_figure.pdf" style="width:100%">
+
+##### Example Plot 3
+<img src="portfolio/thesis/Fig06_cluster_bc_k2.pdf" style="width:100%">
+
+#### [Fundraising Data Visualizations for a Non-Profit](portfolio_nonprofit.html) in New York
 
 <img src="portfolio/stand/screenshot_yearly.png" style="width:33%">
 
-- [My #TidyTuesday Projects](tidy_tuesday.html): A collection of mini-projects completed as part of the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) initiative by the R for Data Science community. These are just for fun, and something I do to practice my skills!
+#### [My #TidyTuesday Projects](tidy_tuesday.html)
+A collection of mini-projects completed as part of the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) initiative by the R for Data Science community. These are just for fun, and something I do to practice my skills!
 
 <img src="portfolio/tidy tuesday/saved/05_09_2019.png" style="width:33%">
 
-- [Visualizations of my Charge 2 Fitbit Data](fitbit.html): A few quick analyses and visualizations I made of my personal fitbit data to help me assess my progress as a runner!
 
-<img src="portfolio/fitbit/fitbit_image.png", style="width:33%">
 

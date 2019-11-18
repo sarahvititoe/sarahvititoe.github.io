@@ -10,10 +10,16 @@ output:
 
 sarahvititoe23@gmail.com | [linkedin.com/in/sarahvititoe](linkedin.com/in/sarahvititoe)
 
+# Skills
+
+**Statistical Programming Languages:** experienced in R, proficient in SQL, MySQL, and SAS, currently learning Python
+
+**Tools:** version control software (Git and GitHub), citation management (EndNote and Zotero), Microsoft Access
+
 # Education
 ### **[Columbia University Mailman School of Public Health](https://www.mailman.columbia.edu/academics/departments/epidemiology), New York, NY**
 
-09/2017 – Expected 05/2019
+09/2017 – 05/2019
 
 **Master of Public Health (MPH) in Epidemiology, Certificate in Applied Biostatistics**
 
@@ -21,13 +27,7 @@ sarahvititoe23@gmail.com | [linkedin.com/in/sarahvititoe](linkedin.com/in/sarahv
 
 * [*Graduate Teaching Assistant:*](portfolio_db.html) SQL and Relational Databases for Research and Data Science (one semester Fall 2018, two semesters Spring 2019)
 
-* *Leadership:* Healthcare Data Analytics Club at Mailman SPH, Co-President 2018 
-
 * *[Relevant Coursework:](course_list.html)* Cancer Epidemiology; Data Science; Pharmacoepidemiology; Categorical Data Analysis 
-
-#### E-Diploma
-
-<embed src="images/mph_diploma.pdf" align="center">
 
 ### **[University of Florida, College of Liberal Arts and Sciences](https://catalog.ufl.edu/UGRD/colleges-schools/UGLAS/MCY_BS/), Gainesville, FL**
 
@@ -35,75 +35,39 @@ sarahvititoe23@gmail.com | [linkedin.com/in/sarahvititoe](linkedin.com/in/sarahv
 
 **Bachelor of Science in Microbiology and Cell Sciences, Minors in Public Health and Health Disparities in Society**
 
-* *[Relevant Coursework:](course_list.html)* Python for Biologists; Molecular Biology; Genetics; Advanced Microbiology Lab
-
 *	*Teaching Assistant:* Laboratory Methods for Microbiology; Introduction to Microbes (Online)
+
+* *Undergraduate Research:* The Role of Autophagy in Solid-Tumor Cancers
 
 # Public Health Experience
 
 ### **[Center for Infection and Immunity](https://www.mailman.columbia.edu/research/center-infection-and-immunity/chronic-diseases-microbiome), Research Assistant, New York, NY**    
 
-#### Autism Spectrum Disorder & The Microbiome 
-05/2019 - 07/2019
+#### Colorectal Cancer, Breast Cancer, Autism Spectrum Disorder & The Microbiome
+01/2018 - 07/2019
 
-**Supervisor: [Dr. Xiaoyu (Jason) Chen, PhD](https://www.mailman.columbia.edu/research/center-infection-and-immunity/xiaoyu-jason-chen)**
+* Analyzed clinical, genetic, and metagenomic data from 4 observational case-control and cohort studies to support principle investigators in studies of biomarkers in colorectal cancer, breast cancer, and autism spectrum disorder.
 
-#### Colorectal Cancer, Breast Cancer & The Microbiome
-01/2018 - 05/2019
+* Leveraged cross function knowledge in cellular biology, epidemiology, and R programming to serve as a liaison between the principal investigators, bioinformaticians, and research technicians. 
 
-**Principal Investigator: [Dr. Brent Williams, PhD](https://www.mailman.columbia.edu/research/center-infection-and-immunity/brent-williams-phd)**
+* Managed complex data, generated reproducible results, and created publication ready visualizations with R. 
 
-- Supports PI by generating analyses of clinical, genetic, and metagenomics data from biobanks and patient samples to investigate the gut microbiome as a factor in biomarker-specific breast and colorectal cancers.
+* Conducted targeted literature reviews on colorectal cancer, epigenetic markers of cancer, and the microbiome.
 
-- Creates efficiencies by writing data cleanings scripts to perform tasks collaborators had previously done by hand.
-
-- Leverages cross function knowledge in cell biology, epidemiology, and analytics methods to serve as a liaison between content expert, bioinformatician, study coordinator, and laboratory technician.
-
-- Manages complex, data and generates reproducible reports and visualizations with R, R Markdown, and Github.
 
 ### **[AbbVie Inc., R&D, Development Design Center](https://news.abbvie.com/news/abbvie-news-briefs/inside-our-design-lab-building-clinical-trial.htm), Graduate Intern, Lake Forrest, IL**
 05/2018 – 08/2018
 
-- Applied epidemiologic methods to systematically review and critique data sources for sources of invalidity or biases; developed a novel approach for answering research question when original data sources and methods quality standards.  
+*	Synthesized literature on barriers of clinical trial participation and patient-centered trial design in oncology.
 
-- Curated real world data from recent cancer clinic trials by querying several private and public databases, critiqued data for potential biases, and implemented observational research methods to meet business need.
+* Designed and conducted a time-to-event analysis in R of the role of oncology trial design on successful trial enrollment using real world enrollment data queried from public and private databases to meet business needs.
 
-- Communicated findings to diverse audiences through interactive presentations, posters, and data visualizations.
-
-- Systematically reviewed quantitative and qualitative literature regarding barriers to participating in clinical trials for cancer patients to inform internal consultant teams about current body of literature regarding patient-centric trial design.
-
-### **[WellFlorida Council HIV Prevention Program](https://wellflorida.org/areas-of-expertise/hiv-aids/), Practicum Student, Greater Gainesville, FL**
-09/2016 – 12/2016
-
-•	Worked with community members and advocates to bring access to HIV testing to high-risk populations.
-•	Used clear and simple language to educate community members about safe-sex practices at outreach events.
-
-### **[UF College of Medicine, Department of Cell Biology](https://acb.med.ufl.edu/faculty-staff/dunn/), Laboratory Technician, Gainesville, FL**
-08/2014 – 09/2015
-
-- Collaborated with a PI to analyze the effect of anti-cancer drugs on tumor cell lines with light microscopy.
-
-- Compiled data from in vitro drug studies, quantified cellular mechanisms, and created data visualizations. 
-
-### **[HealthStreet, UF Department of Epidemiology](http://healthstreet.program.ufl.edu/), Volunteer, Gainesville, FL**
-05/2015 – 07/2015
-
-- Assisted health workers in linking underrepresented community members to local, relevant clinical trials, and helped refer patients to medical or social services to support their participation in clinical research. 
-
-- Aided community health workers in assessing the readability of patient education materials. 
-
-# Skills 
-### Statistical Programming Languages
-- [SQL/MySQL](portfolio_db.html)
-- [R/R Studio/R Markdown](projects.html)
-- [Github](http://github.com/sarahvititoe/)
-- SAS
-- Python (basic)
-- Microsoft [Access](portfolio_db.html) & Excel
-
-### Foreign Languages
-- Spanish (limited working proficiency), including 6-week immersion program in the Dominican Republic
+*	Communicated findings to diverse stakeholders through presentations, posters, and data visualizations in R.
 
 # Community Involvement
-###Children’s Miracle Network Hospital Dance Marathons
-6 years of involvement in two large-scale philanthropies, [The Stand: New York City Dance Marathon](http://www.dmstandnyc.org/) and [Dance Marathon at UF](https://floridadm.org/), supporting [Children's Miracle Network Hospitals](https://childrensmiraclenetworkhospitals.org/). Roles included [**Data Strategist**](portfolio_nonprofit.html) (The Stand, 2019), **Director of Recruitment** (The Stand 2018), and **Assistant Director of Community Outreach** (DM at UF, 2017)
+
+### Children’s Miracle Network Hospital Dance Marathons
+5 years of involvement in two large-scale philanthropies, [The Stand: New York City Dance Marathon](http://www.dmstandnyc.org/) and [Dance Marathon at UF](https://floridadm.org/), supporting [Children's Miracle Network Hospitals](https://childrensmiraclenetworkhospitals.org/). Roles included [**Data Strategist**](portfolio_nonprofit.html) (The Stand, 2019), **Director of Recruitment** (The Stand 2018), and **Assistant Director of Community Outreach** (DM at UF, 2017)
+
+### Healthcare Data Analytics Club at Columbia SPH
+Co-President 2018
