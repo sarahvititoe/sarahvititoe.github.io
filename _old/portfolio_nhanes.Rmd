@@ -1,0 +1,110 @@
+---
+title: 'Machine Learning with LASSO: Feature Reduction using NHANES data'
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    toc_depth: 5
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(glmnet)
+```
+
+This past summer, I've been working with a proteomics dataset, trying to determine if there are any proteins within blood samples from our patients are linked to our outcome of interest. Since I can't share this data publicly, I'm going to show how I used LASSO to help me select important features using a different dataset: NHANES data. 
+
+## About 
+The [National Health and Nutrition Examination Survey (NHANES)](https://www.cdc.gov/nchs/nhanes/index.htm) dataset is from a large cohort study from the CDC, and has been used in quite a bit of research for nutritional studies.
+
+**DISCLAIMER:** While there are many examples of well done, published research studies using NHANES data, I'd like to note that the analysis below is for demonstration of the code only, and we should **not** draw interpretations from my results. 
+
+## Data
+
+I'm going to use the 2015-2016 version of the NHANES data to try ot predict if a person is likely to use healthcare services frequently (HUQ [data dictionary](https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/HUQ_I.htm) and [data](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Questionnaire&CycleBeginYear=2015)) based on a snap shot of their nutrient intake (DR1TOT [data dictionary](https://wwwn.cdc.gov/Nchs/Nhanes/2015-2016/DR1TOT_I.htm) and [data](https://wwwn.cdc.gov/nchs/nhanes/Search/DataPage.aspx?Component=Dietary&CycleBeginYear=2015)).
+
+# Data Preparation 
+
+First, let's start by cleaning up our predictive data a bit. I'll drop administrative data, and do some light cleaning.
+
+```{r}
+Hmisc::sasxport.get("./portfolio/nhanes/DR1TOT_I.XPT") %>% 
+  write_csv("./portfolio/nhanes/diet.csv")
+
+diet <- read_csv("./portfolio/nhanes/diet.csv") %>% 
+  # drop administrative variables, and variables that ask "how often"
+  select(-c(wtdrd1:dr1exmer), -c(drdint:dr1sky), -dr1.300, -ends_with("q")) %>%
+  # convert special diet questions to 1 if yes, on that special diet, and 2 if no, not on that special diet
+  mutate_at(vars(contains("drqsdt")), funs(ifelse(is.na(.), 2, 1)))
+```
+
+Now let's look at out frequency of healthcare use data. HUG051 represents the number of times that a patient has recieved healthcare over the past year. 
+```{r}
+Hmisc::sasxport.get("./portfolio/nhanes/HUQ_I.XPT") %>% 
+  write_csv("./portfolio/nhanes/use.csv")
+
+use <- read_csv("./portfolio/nhanes/use.csv") %>% 
+  select(seqn, huq = huq051) %>% 
+  mutate(huq = ifelse(huq > 8, NA, huq))
+```
+
+Let's see what our average category is. 
+```{r}
+use %>% 
+  summarise(mean = mean(huq, na.rm = TRUE), median = median(huq, na.rm = TRUE))
+
+use %>% 
+  ggplot(aes(y = huq)) +
+  geom_boxplot()
+```
+
+Since ~2 seems to be the median and the mean, I'll categorize people who use care at level 3 (meaning 4 or more times a year) as "high users" of healthcare. 
+
+```{r}
+use <- use %>% 
+  mutate(huq = ifelse(is.na(huq), NA, 
+                      ifelse(huq >= 3, "high user", "low user"))) %>% 
+  mutate(huq = as.factor(huq)) %>% 
+  mutate(huq = relevel(huq, ref = "low user"))
+```
+
+Now we'll join these two datasets together. 
+```{r}
+data <- use %>% 
+  inner_join(diet)
+```
+
+# Create Testing and Training Datasets 
+```{r}
+set.seed(23) 
+
+sample <- tibble(id = 1:100, 
+                 study = "nhanes") 
+
+data <- data %>% 
+  nest() %>% 
+  mutate(study = "nhanes") %>% 
+  full_join(sample) %>% 
+  mutate(train = map(data, ~sample_frac(., .8))) %>% 
+  mutate(test = map2(data, train, ~anti_join(.x, .y, by = "seqn")))
+```
+
+# LASSO Model
+```{r}
+lasso <- data %>% 
+  # need to create a predictor dataframe as a matrix
+  mutate(predictor = map(train, ~select(., -seqn, -huq))) %>% 
+  mutate(predictor = map(predictor, ~as.matrix.data.frame(.))) %>% 
+  # need to create a response dataframe, as a matrix
+  mutate(response = map(train, ~select(., huq))) %>% 
+  mutate(response = map(response, ~as.matrix.data.frame(.))) %>% 
+  # the family = binomial specifies that our outcome is binomial (don't forget to be sure it's a factor!!)
+  # the type.measure specifies what loss we use for cross-validation (Jason asked for deviance)
+  # alpha = 1 specifies that this is a LASSO regresssion
+  # standardize = TRUE standardizes our data for us
+  mutate(lasso = map2(predictor, response, ~cv.glmnet(.x, .y, family = "binomial", type.measure = "deviance", alpha = 1))) 
+  # this results in the lasso trying out a lot of different lambda values. We want to use the lambda that resulted in the smallest error to make our model.  
+```
+
