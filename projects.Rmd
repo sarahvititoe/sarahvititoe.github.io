@@ -28,15 +28,15 @@ The goal of this analysis was to see if there was a relationship between 8 bioma
 
 #### Example Plot 1
 
-<img src="portfolio/thesis/Fig02_tumor_methylation.jpg" style="width:75%">
+<img src="portfolio/thesis/Fig02.png" style="width:75%">
 
 #### Example Plot 2
 
-<img src="portfolio/thesis/Fig03_otu_figure.jpg" style="width:75%">
+<img src="portfolio/thesis/Fig03.png" style="width:75%">
 
 #### Example Plot 3
 
-<img src="portfolio/thesis/Fig06_cluster_bc_k2.jpg" style="width:75%">
+<img src="portfolio/thesis/Fig06.png" style="width:75%">
 
 ### Fundraising Data Visualizations for a Non-Profit in New York
 
