@@ -22,15 +22,19 @@ Below are some highlights of data visualizations I've created for various projec
 
 **The Role of Gut Microbiota on CpG Island Methylation Phenotype CIMP Colorectal Cancer Tumorigenesis**
 
-**Example Plot 1**
+The goal of this analysis was to see if there was a relationship between 8 biomarkers of the CIMP subtype of colorectal cancer (methylation markers) and the community of gut microbiota found in biopsied colorectal cancer tumors. 
+
+*(Please note that the plots shown here are for demonstration only and results have not been peer reviewed.)*
+
+#### Example Plot 1
 
 <img src="portfolio/thesis/Fig02_tumor_methylation.png" style="width:75%">
 
-**Example Plot 2**
+#### Example Plot 2
 
 <img src="portfolio/thesis/Fig03_otu_figure.png" style="width:75%">
 
-**Example Plot 3**
+#### Example Plot 3
 
 <img src="portfolio/thesis/Fig06_cluster_bc_k2.png" style="width:75%">
 
